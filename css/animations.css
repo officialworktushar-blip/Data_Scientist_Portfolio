@@ -1,0 +1,348 @@
+/* ================================================
+   CREATIVE ANIMATIONS — Portfolio Extra Layer
+   ================================================ */
+
+/* ---- LOADING SCREEN ---- */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#loader.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+.loader-logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+.loader-bar-track {
+  width: 220px;
+  height: 3px;
+  background: var(--dark-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader-bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--gradient);
+  border-radius: 2px;
+  transition: width 0.05s linear;
+}
+.loader-canvas-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+#loader-canvas { width: 120px; height: 120px; }
+.loader-pct {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+/* ---- SCROLL PROGRESS BAR ---- */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #6C63FF, #00D4AA, #FF6B6B);
+  z-index: 9998;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.6);
+}
+
+/* ---- SPOTLIGHT CURSOR ---- */
+#spotlight {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108,99,255,0.06) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+}
+
+/* ---- MORPHING BLOB ---- */
+.blob-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  animation: morphBlob 12s ease-in-out infinite alternate;
+}
+.blob-1 {
+  width: 500px; height: 500px;
+  background: var(--primary);
+  top: -150px; right: -100px;
+  animation-delay: 0s;
+}
+.blob-2 {
+  width: 350px; height: 350px;
+  background: var(--secondary);
+  bottom: -100px; left: -80px;
+  animation-delay: 4s;
+}
+.blob-3 {
+  width: 250px; height: 250px;
+  background: var(--accent);
+  top: 50%; left: 40%;
+  animation-delay: 8s;
+}
+@keyframes morphBlob {
+  0%   { border-radius: 50%; transform: scale(1) translate(0,0); }
+  25%  { border-radius: 40% 60% 70% 30% / 30% 50% 50% 70%; transform: scale(1.1) translate(30px,-20px); }
+  50%  { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: scale(0.95) translate(-20px,30px); }
+  75%  { border-radius: 30% 70% 50% 50% / 40% 60% 40% 60%; transform: scale(1.05) translate(20px,20px); }
+  100% { border-radius: 50%; transform: scale(1) translate(0,0); }
+}
+
+/* ---- MAGNETIC BUTTONS ---- */
+.btn-primary, .btn-outline, .btn-white, .btn-outline-white, .nav-cta {
+  will-change: transform;
+}
+.btn-magnetic-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+/* ---- 3D CARD TILT ---- */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  transition: transform 0.1s ease;
+  will-change: transform;
+}
+.tilt-card .tilt-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+.tilt-card:hover .tilt-shine { opacity: 1; }
+
+/* ---- TEXT SCRAMBLE ---- */
+.scramble-text {
+  display: inline-block;
+}
+
+/* ---- GLITCH EFFECT ---- */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.glitch::before {
+  animation: glitch-1 3s infinite linear;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translateX(-2px);
+  opacity: 0;
+}
+.glitch::after {
+  animation: glitch-2 3s infinite linear;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  transform: translateX(2px);
+  opacity: 0;
+}
+@keyframes glitch-1 {
+  0%,89%,100% { opacity: 0; transform: translateX(0); }
+  90% { opacity: 0.6; transform: translateX(-3px); clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); }
+  92% { transform: translateX(3px); clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); }
+  94% { transform: translateX(-2px); }
+  96% { opacity: 0; }
+}
+@keyframes glitch-2 {
+  0%,89%,100% { opacity: 0; transform: translateX(0); }
+  91% { opacity: 0.5; transform: translateX(3px); clip-path: polygon(0 55%, 100% 55%, 100% 75%, 0 75%); }
+  93% { transform: translateX(-3px); }
+  95% { opacity: 0; }
+}
+
+/* ---- TYPEWRITER ---- */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: var(--secondary);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 0.8s steps(1) infinite;
+}
+@keyframes blink-cursor {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+#typewriter-wrap {
+  color: var(--secondary);
+  font-weight: 800;
+  min-height: 1.2em;
+  display: inline;
+}
+
+/* ---- FLOATING DATA CHIPS ---- */
+.data-chips {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.data-chip {
+  position: absolute;
+  background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(108,99,255,0.5);
+  white-space: nowrap;
+  animation: floatChip linear infinite;
+  font-family: var(--font-display);
+}
+@keyframes floatChip {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(40px); opacity: 0; }
+}
+
+/* ---- STATS SECTION GLOW ---- */
+.stat-card:hover .stat-icon {
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 0 30px rgba(108,99,255,0.5);
+  animation: pulse-glow 1s ease infinite alternate;
+}
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 15px rgba(108,99,255,0.4); }
+  to   { box-shadow: 0 0 40px rgba(108,99,255,0.8); }
+}
+
+/* ---- NEON BORDER PULSE ---- */
+@keyframes neon-border {
+  0%,100% { box-shadow: 0 0 5px rgba(108,99,255,0.3), 0 0 20px rgba(108,99,255,0.1); }
+  50%      { box-shadow: 0 0 20px rgba(108,99,255,0.7), 0 0 60px rgba(108,99,255,0.3); }
+}
+.hero-badge { animation: neon-border 3s ease-in-out infinite, fadeSlideDown 1s ease forwards; }
+
+/* ---- SKILLS PAGE MATRIX TRAIL ---- */
+.matrix-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 0;
+}
+#matrix-canvas { width: 100%; height: 100%; }
+
+/* ---- COUNT-UP FLIP STYLE ---- */
+.stat-value {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- HOVER REVEAL UNDERLINE ---- */
+.nav-link { position: relative; overflow: hidden; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 50%;
+  width: 0; height: 2px;
+  background: var(--primary);
+  border-radius: 1px;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-link:hover::after, .nav-link.active::after {
+  width: 60%;
+}
+
+/* ---- SECTION TITLE REVEAL ---- */
+.section-title .word {
+  display: inline-block;
+  overflow: hidden;
+}
+.section-title .word span {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease;
+}
+.section-title.revealed .word span {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ---- PAGE TRANSITION OVERLAY ---- */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--primary);
+  z-index: 99990;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  pointer-events: none;
+}
+#page-transition.enter {
+  animation: slideUp 0.5s cubic-bezier(0.76,0,0.24,1) forwards;
+}
+#page-transition.leave {
+  transform-origin: top;
+  animation: slideDown 0.5s cubic-bezier(0.76,0,0.24,1) forwards;
+}
+@keyframes slideUp   { to { transform: scaleY(1); } }
+@keyframes slideDown { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+
+/* ---- ORBITING DOTS around avatar ---- */
+.orbit-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--secondary);
+}
+.orbit-dot-2 { background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+.orbit-dot-3 { background: var(--primary); box-shadow: 0 0 12px var(--primary); }

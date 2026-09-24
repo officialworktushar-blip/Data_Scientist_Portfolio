@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Dr. Alex Morgan — Data Scientist</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="cursor-outer"></div>
+  <div class="cursor-inner"></div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">AM</span>
+        <span class="logo-text">Alex<span class="accent">Morgan</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta btn-primary">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="section-badge" data-aos="fade-up">Portfolio</div>
+      <h1 data-aos="fade-up" data-aos-delay="100">200+ Projects. <span class="gradient-text">Real Results.</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">From healthcare AI to FinTech fraud detection — a track record of delivering measurable business impact.</p>
+    </div>
+  </section>
+
+  <!-- ALL PROJECTS SECTION -->
+  <section class="projects-page">
+    <div class="section-container">
+      <!-- Filter Bar -->
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="nlp">NLP / GenAI</button>
+        <button class="filter-btn" data-filter="fintech">FinTech</button>
+        <button class="filter-btn" data-filter="health">Healthcare</button>
+        <button class="filter-btn" data-filter="cv">Computer Vision</button>
+        <button class="filter-btn" data-filter="data">Data Engineering</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="all-projects-grid" id="projects-grid">
+
+        <div class="project-full-card" data-category="health" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-visual" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+            <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Healthcare AI</div>
+            <h3>Patient Risk Prediction Engine</h3>
+            <p>ML model predicting 30-day readmission risk for a top US hospital network. 94% AUC, saving $8M annually.</p>
+            <div class="project-metrics"><span><i class="fas fa-chart-line"></i> 94% AUC</span><span><i class="fas fa-dollar-sign"></i> $8M Saved</span></div>
+            <div class="project-tech"><span>Python</span><span>XGBoost</span><span>AWS</span><span>SHAP</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="ml" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-visual" style="background:linear-gradient(135deg,#f7971e,#ffd200)">
+            <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">E-Commerce / ML</div>
+            <h3>Real-Time Recommendation System</h3>
+            <p>Deep learning rec engine for Fortune 500 retailer — +340% CTR and $22M in incremental revenue.</p>
+            <div class="project-metrics"><span><i class="fas fa-mouse-pointer"></i> +340% CTR</span><span><i class="fas fa-dollar-sign"></i> $22M</span></div>
+            <div class="project-tech"><span>PyTorch</span><span>Redis</span><span>GCP</span><span>Feast</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="fintech" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-visual" style="background:linear-gradient(135deg,#11998e,#38ef7d)">
+            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">FinTech</div>
+            <h3>Fraud Detection at Scale</h3>
+            <p>Real-time fraud pipeline processing 10M+ transactions/day with sub-100ms latency for a major US bank.</p>
+            <div class="project-metrics"><span><i class="fas fa-shield-alt"></i> 99.2% Precision</span><span><i class="fas fa-bolt"></i> &lt;100ms</span></div>
+            <div class="project-tech"><span>Spark</span><span>Kafka</span><span>TensorFlow</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="nlp" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-visual" style="background:linear-gradient(135deg,#ee0979,#ff6a00)">
+            <div class="project-icon"><i class="fas fa-comments"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">NLP / GenAI</div>
+            <h3>Enterprise RAG Chatbot</h3>
+            <p>Custom LLM-powered RAG system for a 20,000-employee company — reducing support ticket volume by 67%.</p>
+            <div class="project-metrics"><span><i class="fas fa-robot"></i> GPT-4 Based</span><span><i class="fas fa-arrow-down"></i> -67% Tickets</span></div>
+            <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="cv" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-visual" style="background:linear-gradient(135deg,#4776e6,#8e54e9)">
+            <div class="project-icon"><i class="fas fa-eye"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Computer Vision</div>
+            <h3>Retail Shelf Monitoring AI</h3>
+            <p>Real-time CV system for shelf out-of-stock detection across 2,000 stores — improving availability by 23%.</p>
+            <div class="project-metrics"><span><i class="fas fa-eye"></i> 97% Accuracy</span><span><i class="fas fa-store"></i> 2K Stores</span></div>
+            <div class="project-tech"><span>YOLO v8</span><span>PyTorch</span><span>Edge AI</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-visual" style="background:linear-gradient(135deg,#00c6ff,#0072ff)">
+            <div class="project-icon"><i class="fas fa-database"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Data Engineering</div>
+            <h3>Lakehouse Data Platform</h3>
+            <p>Designed and built a petabyte-scale data lakehouse on AWS for a Fortune 100 — reducing data processing costs by 55%.</p>
+            <div class="project-metrics"><span><i class="fas fa-database"></i> 1PB+ Data</span><span><i class="fas fa-arrow-down"></i> -55% Cost</span></div>
+            <div class="project-tech"><span>Databricks</span><span>Delta Lake</span><span>AWS</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="nlp" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-visual" style="background:linear-gradient(135deg,#ff9a9e,#fecfef)">
+            <div class="project-icon"><i class="fas fa-heart"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">NLP / Sentiment</div>
+            <h3>Customer Sentiment Analytics</h3>
+            <p>Multi-source NLP pipeline analyzing 5M+ reviews/month — driving product decisions for a top-5 US retailer.</p>
+            <div class="project-metrics"><span><i class="fas fa-poll"></i> 92% Accuracy</span><span><i class="fas fa-comments"></i> 5M Reviews</span></div>
+            <div class="project-tech"><span>BERT</span><span>Spark NLP</span><span>Tableau</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="fintech" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-visual" style="background:linear-gradient(135deg,#56ccf2,#2f80ed)">
+            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">FinTech / Quant</div>
+            <h3>Algorithmic Trading Engine</h3>
+            <p>ML-driven quant strategy for equity markets — achieving a Sharpe ratio of 2.8 and 31% annualized returns.</p>
+            <div class="project-metrics"><span><i class="fas fa-chart-line"></i> 31% Returns</span><span><i class="fas fa-balance-scale"></i> Sharpe 2.8</span></div>
+            <div class="project-tech"><span>Python</span><span>LSTM</span><span>Bloomberg API</span></div>
+          </div>
+        </div>
+
+        <div class="project-full-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-visual" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">
+            <div class="project-icon"><i class="fas fa-truck"></i></div>
+            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Supply Chain / ML</div>
+            <h3>Supply Chain Optimization</h3>
+            <p>ML model for demand forecasting and logistics routing — reducing operational costs by 28% for a national logistics firm.</p>
+            <div class="project-metrics"><span><i class="fas fa-arrow-down"></i> -28% Costs</span><span><i class="fas fa-map-marker-alt"></i> 500 Routes</span></div>
+            <div class="project-tech"><span>Prophet</span><span>OR-Tools</span><span>GCP</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CASE STUDY -->
+  <section class="case-study-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">Deep Dive</div>
+        <h2 class="section-title">Featured <span class="gradient-text">Case Study</span></h2>
+        <p class="section-desc">A closer look at one of the most impactful projects in the portfolio.</p>
+      </div>
+      <div class="case-study-card" data-aos="fade-up">
+        <div class="case-study-header">
+          <div class="case-visual">🏥</div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-metric-val">94%</span>
+              <span class="case-metric-label">AUC Score</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-metric-val">$8M</span>
+              <span class="case-metric-label">Annual Savings</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-metric-val">-62%</span>
+              <span class="case-metric-label">Readmission Rate</span>
+            </div>
+            <div class="case-metric">
+              <span class="case-metric-val">2.1M</span>
+              <span class="case-metric-label">Patients Served</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-study-body">
+          <div class="project-category">Healthcare AI — Kaiser Permanente</div>
+          <h3>Patient Risk Prediction Engine: End-to-End ML for Healthcare</h3>
+          <p>
+            Kaiser Permanente needed to reduce costly 30-day hospital readmissions. Working embedded with their clinical data team, I designed and deployed a gradient boosting ensemble that analyzes 340+ patient features — vitals, medication history, social determinants, and EHR data — to identify high-risk patients at discharge.
+          </p>
+          <p>
+            The model achieved a 94% AUC and was integrated directly into clinical workflows via a HIPAA-compliant API, enabling care coordinators to intervene proactively. In Year 1, readmission rates dropped 62% in target populations, generating $8M in savings.
+          </p>
+          <div class="case-tags">
+            <span>Feature Engineering</span>
+            <span>XGBoost</span>
+            <span>SHAP Explanability</span>
+            <span>AWS SageMaker</span>
+            <span>HIPAA Compliance</span>
+            <span>Clinical Integration</span>
+            <span>A/B Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GITHUB STATS -->
+  <section class="github-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">Open Source</div>
+        <h2 class="section-title">GitHub <span class="gradient-text">Contributions</span></h2>
+        <p class="section-desc">Active open source contributor with libraries used by thousands of data scientists worldwide.</p>
+      </div>
+      <div class="github-grid" data-aos="fade-up">
+        <div class="github-stat">
+          <i class="fas fa-code-branch"></i>
+          <span class="github-stat-val">127</span>
+          <div class="github-stat-label">Repositories</div>
+        </div>
+        <div class="github-stat">
+          <i class="fas fa-star"></i>
+          <span class="github-stat-val">14K+</span>
+          <div class="github-stat-label">GitHub Stars</div>
+        </div>
+        <div class="github-stat">
+          <i class="fas fa-users"></i>
+          <span class="github-stat-val">8.2K</span>
+          <div class="github-stat-label">Followers</div>
+        </div>
+        <div class="github-stat">
+          <i class="fas fa-box-open"></i>
+          <span class="github-stat-val">23</span>
+          <div class="github-stat-label">npm / PyPI Packages</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="pubs-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">Research</div>
+        <h2 class="section-title">Selected <span class="gradient-text">Publications</span></h2>
+        <p class="section-desc">Peer-reviewed research published at top ML and AI conferences.</p>
+      </div>
+      <div class="pub-card" data-aos="fade-up">
+        <div class="pub-num">01</div>
+        <div class="pub-info">
+          <h4>Scalable Bayesian Inference for High-Dimensional Time-Series Forecasting</h4>
+          <p>A novel variational inference framework enabling 100× faster Bayesian forecasting on large-scale datasets without sacrificing accuracy. Adopted by three Fortune 500 companies.</p>
+          <div class="pub-meta">
+            <span><i class="fas fa-graduation-cap"></i> NeurIPS 2023</span>
+            <span><i class="fas fa-quote-right"></i> 312 Citations</span>
+            <span><i class="fas fa-star"></i> Spotlight Paper</span>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="pub-num">02</div>
+        <div class="pub-info">
+          <h4>Causally-Aware Recommendation Systems for E-Commerce</h4>
+          <p>Introducing causal inference techniques to recommendation systems, reducing popularity bias by 44% while improving long-tail item discovery and business diversity metrics.</p>
+          <div class="pub-meta">
+            <span><i class="fas fa-graduation-cap"></i> RecSys 2022</span>
+            <span><i class="fas fa-quote-right"></i> 198 Citations</span>
+            <span><i class="fas fa-trophy"></i> Best Paper Award</span>
+          </div>
+        </div>
+      </div>
+      <div class="pub-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="pub-num">03</div>
+        <div class="pub-info">
+          <h4>Efficient Transformers for Clinical NLP: A Healthcare Case Study</h4>
+          <p>Domain-adapted BERT variants achieving state-of-the-art on 7 clinical NLP benchmarks with 40% less compute than baseline GPT approaches, making LLMs viable in low-resource clinical environments.</p>
+          <div class="pub-meta">
+            <span><i class="fas fa-graduation-cap"></i> ACL 2021</span>
+            <span><i class="fas fa-quote-right"></i> 445 Citations</span>
+            <span><i class="fas fa-star"></i> Oral Presentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">AM</span>
+          <span class="logo-text">Alex<span class="accent">Morgan</span></span>
+        </a>
+        <p>Senior Data Scientist | AI &amp; ML Expert | San Francisco, CA</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Machine Learning</a>
+          <a href="#">Data Engineering</a>
+          <a href="#">AI Consulting</a>
+          <a href="#">MLOps</a>
+          <a href="#">Workshops</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:alex@alexmorgan.ai"><i class="fas fa-envelope"></i> alex@alexmorgan.ai</a>
+          <a href="tel:+14155551234"><i class="fas fa-phone"></i> +1 (415) 555-1234</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with passion &amp; code</p>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Project Filter
+    (function () {
+      const btns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-full-card');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          cards.forEach(card => {
+            const cat = card.dataset.category;
+            const show = filter === 'all' || cat === filter;
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+              card.classList.toggle('hide', !show);
+              if (show) {
+                requestAnimationFrame(() => {
+                  card.style.opacity = '1';
+                  card.style.transform = 'scale(1)';
+                  card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                });
+              }
+            }, 200);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

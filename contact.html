@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Dr. Alex Morgan — Data Scientist</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="cursor-outer"></div>
+  <div class="cursor-inner"></div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">AM</span>
+        <span class="logo-text">Alex<span class="accent">Morgan</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta btn-primary">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="section-badge" data-aos="fade-up">Get In Touch</div>
+      <h1 data-aos="fade-up" data-aos-delay="100">Let's Build Something <span class="gradient-text">Extraordinary</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">Have a data challenge or exciting opportunity? I'd love to hear about it — I typically respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-page">
+    <div class="section-container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div data-aos="fade-right">
+          <h2>Ready to Collaborate?</h2>
+          <p>Whether you need a fractional data science leader, a project-based consultant, or are looking to hire a full-time Principal Data Scientist, let's connect and explore how I can add value to your organization.</p>
+
+          <div class="contact-cards">
+            <a href="mailto:alex@alexmorgan.ai" class="contact-card">
+              <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-card-text">
+                <strong>Email Me</strong>
+                <span>alex@alexmorgan.ai</span>
+              </div>
+            </a>
+            <a href="tel:+14155551234" class="contact-card">
+              <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-card-text">
+                <strong>Call or Text</strong>
+                <span>+1 (415) 555-1234</span>
+              </div>
+            </a>
+            <a href="#" class="contact-card">
+              <div class="contact-card-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div class="contact-card-text">
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/in/alexmorgan-ds</span>
+              </div>
+            </a>
+            <a href="#" class="contact-card">
+              <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-card-text">
+                <strong>Based In</strong>
+                <span>San Francisco, CA (Open to Remote)</span>
+              </div>
+            </a>
+            <a href="#" class="contact-card">
+              <div class="contact-card-icon"><i class="fab fa-calendly" style="font-style:normal;font-weight:700;font-family:var(--font-display);font-size:14px">CAL</div>
+              <div class="contact-card-text">
+                <strong>Schedule a Call</strong>
+                <span>calendly.com/alexmorgan-ds</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+            <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div data-aos="fade-left">
+          <div class="contact-form-wrap">
+            <div class="form-title">Send Me a Message</div>
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name *</label>
+                  <input type="text" id="fname" placeholder="John" required />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name *</label>
+                  <input type="text" id="lname" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="john@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" placeholder="Your company name" />
+              </div>
+              <div class="form-group">
+                <label for="project-type">Type of Engagement *</label>
+                <select id="project-type" required>
+                  <option value="">Select an option...</option>
+                  <option>ML / AI Project Consulting</option>
+                  <option>Data Strategy & Roadmap</option>
+                  <option>MLOps & Platform Build</option>
+                  <option>Team Training / Workshop</option>
+                  <option>Full-Time Opportunity</option>
+                  <option>Speaking / Conference</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Estimated Budget (USD)</label>
+                <select id="budget">
+                  <option value="">Prefer not to say</option>
+                  <option>&lt; $10,000</option>
+                  <option>$10,000 – $50,000</option>
+                  <option>$50,000 – $150,000</option>
+                  <option>$150,000 – $500,000</option>
+                  <option>$500,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell Me About Your Project *</label>
+                <textarea id="message" placeholder="Describe your data challenge, goals, timeline, and any relevant context..." required></textarea>
+              </div>
+              <button type="submit" class="btn-primary form-submit">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+            <div class="form-success" id="form-success">
+              <i class="fas fa-check-circle"></i>
+              <h3>Message Sent!</h3>
+              <p>Thanks for reaching out. I'll review your message and get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVAILABILITY -->
+  <section class="availability-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">Availability</div>
+        <h2 class="section-title">How I Can <span class="gradient-text">Help You</span></h2>
+        <p class="section-desc">Currently accepting select new projects and opportunities in 2026.</p>
+      </div>
+      <div class="availability-grid">
+        <div class="avail-card" data-aos="fade-up" data-aos-delay="0">
+          <span class="avail-icon"><i class="fas fa-laptop-code"></i></span>
+          <h3>Project Consulting</h3>
+          <p>End-to-end data science project delivery. From scoping and architecture to model deployment and handoff. Available for 3–12 month engagements.</p>
+          <div class="avail-status"><span class="avail-dot"></span> Open to Projects</div>
+        </div>
+        <div class="avail-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="avail-icon"><i class="fas fa-users-cog"></i></span>
+          <h3>Fractional CDO / DS Lead</h3>
+          <p>Part-time embedded data science leadership for startups and growth-stage companies that need senior expertise without a full-time hire.</p>
+          <div class="avail-status"><span class="avail-dot"></span> 1 Slot Available</div>
+        </div>
+        <div class="avail-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="avail-icon"><i class="fas fa-briefcase"></i></span>
+          <h3>Full-Time Opportunities</h3>
+          <p>Open to exceptional Principal / Staff Data Scientist or Head of AI/ML roles at mission-driven companies in the USA (remote or SF Bay Area).</p>
+          <div class="avail-status"><span class="avail-dot"></span> Selectively Open</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">FAQ</div>
+        <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p class="section-desc">Answers to the most common questions I receive from potential clients and employers.</p>
+      </div>
+      <div class="faq-list" data-aos="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            What industries have you worked in?
+            <div class="faq-arrow"><i class="fas fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              I've delivered projects across FinTech/banking, healthcare, e-commerce/retail, tech (SaaS), logistics/supply chain, media/streaming, and the public sector. My breadth of domain experience allows me to identify cross-industry patterns and bring fresh perspectives to every engagement.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you work remotely?
+            <div class="faq-arrow"><i class="fas fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — I work remotely with clients across the US and internationally. I'm based in San Francisco, CA (PT timezone) and am experienced with async collaboration tools (Slack, Notion, Linear). For clients in the Bay Area, I'm happy to do occasional in-person sessions.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What does your typical engagement look like?
+            <div class="faq-arrow"><i class="fas fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Engagements typically start with a free 30-minute discovery call to understand your needs and assess fit. From there, I provide a detailed Statement of Work covering scope, deliverables, timeline, and pricing. I provide weekly progress updates and prefer agile, iterative delivery with clear milestones.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your rate for consulting projects?
+            <div class="faq-arrow"><i class="fas fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              My rate varies based on project scope, complexity, and duration. Hourly consulting starts at $400/hr. For project-based engagements, I prefer fixed-price contracts tied to deliverables. For longer retainer arrangements (fractional CDO), I offer reduced monthly rates. Contact me for a custom quote.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can you sign an NDA before our conversation?
+            <div class="faq-arrow"><i class="fas fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. I regularly sign NDAs and confidentiality agreements before discussing proprietary business data or plans. Simply request this in your initial message and I'll have it ready before our first call.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer team training or workshops?
+            <div class="faq-arrow"><i class="fas fa-chevron-down"></i></div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! I offer customized training workshops for data science and analytics teams covering topics like ML best practices, MLOps, LLM integration, A/B testing, and data-driven product thinking. Workshops can be delivered in-person or virtually, from 1-day intensives to multi-week programs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">AM</span>
+          <span class="logo-text">Alex<span class="accent">Morgan</span></span>
+        </a>
+        <p>Senior Data Scientist | AI &amp; ML Expert | San Francisco, CA</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">Machine Learning</a>
+          <a href="#">Data Engineering</a>
+          <a href="#">AI Consulting</a>
+          <a href="#">MLOps</a>
+          <a href="#">Workshops</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:alex@alexmorgan.ai"><i class="fas fa-envelope"></i> alex@alexmorgan.ai</a>
+          <a href="tel:+14155551234"><i class="fas fa-phone"></i> +1 (415) 555-1234</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with passion &amp; code</p>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Contact Form
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = this.querySelector('.form-submit');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        this.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }, 1800);
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

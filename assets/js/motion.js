@@ -111,12 +111,22 @@
       observeOnce(el, function () { reveal(el); });
     });
 
-    /* Belt-and-braces: anything already near the fold reveals on scroll. */
+    /* Belt-and-braces: IO can miss targets inside content-visibility skip
+       sections during fast scrolls, so a passive scroll pass always runs as
+       well (it only reveals, never hides). */
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        els.forEach(function (el) {
+          if (!el.classList.contains('rv-in') && inViewport(el)) reveal(el);
+        });
+      });
+    }, { passive: true });
     if (typeof IntersectionObserver === 'undefined') {
       setTimeout(function () { els.forEach(function (el) { reveal(el); }); }, 1200);
-      window.addEventListener('scroll', function () {
-        els.forEach(function (el) { if (!el.classList.contains('rv-in') && inViewport(el)) reveal(el); });
-      }, { passive: true });
     }
   }
 
@@ -163,7 +173,7 @@
           inner.textContent = word;
           outer.appendChild(inner);
           frag.appendChild(outer);
-          frag.appendChild(document.createTextNode('\u00A0'));
+          frag.appendChild(document.createTextNode('\u0020'));
         });
         frag.removeChild(frag.lastChild);
         child.parentNode.replaceChild(frag, child);
@@ -233,10 +243,11 @@
     Array.prototype.forEach.call(document.querySelectorAll('[data-marquee]'), function (m) {
       var track = m.querySelector(':scope > .marquee-track');
       if (!track) return;
-      var group = track.querySelector(':scope > .marquee-group');
-      if (!group || m._marq) return;
+      /* If the HTML already ships two groups (no-JS fallback), leave it alone. */
+      var groups = track.querySelectorAll(':scope > .marquee-group');
+      if (groups.length >= 2 || m._marq) return;
       m._marq = true;
-      var clone = group.cloneNode(true);
+      var clone = groups[0].cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
     });

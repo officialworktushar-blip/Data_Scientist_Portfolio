@@ -16,7 +16,7 @@
     return;
   }
 
-  var OUT = 380;
+  var OUT = 250;
 
   html.classList.add('pt-ready');
   setTimeout(function () { html.classList.add('pt-done'); }, 40);

@@ -24,6 +24,15 @@
   font-size: 18px;
 }
 
+/* At 390–415px the paragraph is 2 lines in the pre-font-load fallback face but
+   3 lines once Inter arrives; reserving the loaded height keeps the hero from
+   reflowing (about-bio shift) when the webfont swaps in. */
+@media (min-width: 384px) and (max-width: 416px) {
+  .page-hero p {
+    min-height: 115px;
+  }
+}
+
 /* ---- About Bio ---- */
 .about-bio {
   position: relative;
@@ -186,7 +195,7 @@
   border-radius: 50%;
   margin: 0 auto;
   border: 3px solid var(--dark);
-  box-shadow: 0 0 20px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   position: relative;
   z-index: 2;
   margin-top: 20px;
@@ -202,7 +211,7 @@
 .timeline-content:hover { border-color: var(--primary); transform: scale(1.02); }
 .timeline-year {
   display: inline-block;
-  background: rgba(108, 99, 255, 0.15);
+  background: rgba(59, 130, 246, 0.15);
   color: var(--primary);
   padding: 4px 12px;
   border-radius: 4px;
@@ -266,9 +275,9 @@
   margin-bottom: 12px;
 }
 .cert-year {
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--primary);
-  border: 1px solid rgba(108, 99, 255, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 4px 12px;
   border-radius: 50px;
   font-size: 12px;

@@ -54,7 +54,7 @@
   height: 14px;
   border-radius: 50%;
   background: var(--primary);
-  box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.16);
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.16);
 }
 .js-era-left { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
 .js-era-year {
@@ -93,8 +93,8 @@
   gap: 10px;
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: rgba(59, 130, 246, 0.1);
 }
 .js-era-metric-val {
   font-family: var(--font-mono);
@@ -175,7 +175,7 @@
   height: 14px;
   border-radius: 50%;
   background: var(--primary);
-  box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.15);
 }
 .js-step-num {
   display: block;
@@ -407,7 +407,7 @@
   color: #fff;
   font-size: 1.1rem;
   margin-bottom: 18px;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
 }
 .js-eng-card h3 {
   font-family: var(--font-display);
@@ -482,9 +482,9 @@
   filter: blur(70px);
   will-change: transform;
 }
-.js-mesh-b1 { top: -20vmax; left: -12vmax; background: radial-gradient(circle, rgba(99, 102, 241, 0.55), transparent 62%); animation: js-mesh-move1 26s var(--ease-out) infinite alternate; }
-.js-mesh-b2 { bottom: -24vmax; right: -14vmax; background: radial-gradient(circle, rgba(34, 211, 238, 0.4), transparent 62%); animation: js-mesh-move2 32s var(--ease-out) infinite alternate; }
-.js-mesh-b3 { top: 22%; left: 55%; width: 34vmax; height: 34vmax; background: radial-gradient(circle, rgba(167, 139, 250, 0.4), transparent 62%); animation: js-mesh-move3 38s var(--ease-out) infinite alternate; }
+.js-mesh-b1 { top: -20vmax; left: -12vmax; background: radial-gradient(circle, rgba(59, 130, 246, 0.55), transparent 62%); animation: js-mesh-move1 26s var(--ease-out) infinite alternate; }
+.js-mesh-b2 { bottom: -24vmax; right: -14vmax; background: radial-gradient(circle, rgba(96, 165, 250, 0.4), transparent 62%); animation: js-mesh-move2 32s var(--ease-out) infinite alternate; }
+.js-mesh-b3 { top: 22%; left: 55%; width: 34vmax; height: 34vmax; background: radial-gradient(circle, rgba(147, 197, 253, 0.4), transparent 62%); animation: js-mesh-move3 38s var(--ease-out) infinite alternate; }
 @keyframes js-mesh-move1 { to { transform: translate(9vmax, 5vmax) scale(1.15); } }
 @keyframes js-mesh-move2 { to { transform: translate(-7vmax, -4vmax) scale(1.1); } }
 @keyframes js-mesh-move3 { to { transform: translate(-6vmax, 6vmax) scale(0.9); } }
@@ -526,14 +526,14 @@
   pointer-events: none;
   opacity: 1;
   background:
-    radial-gradient(1200px 600px at 70% -10%, rgba(99, 102, 241, 0.28), transparent 60%),
-    radial-gradient(900px 500px at 10% 110%, rgba(0, 212, 170, 0.16), transparent 60%),
+    radial-gradient(1200px 600px at 70% -10%, rgba(59, 130, 246, 0.28), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(59, 130, 246, 0.16), transparent 60%),
     linear-gradient(160deg, #0b0f1e, #05070f);
-  transition: opacity 0.45s var(--ease-out);
+  transition: opacity 0.25s var(--ease-out);
   will-change: opacity;
 }
 html.pt-done #page-transition { opacity: 0; }
-html.pt-leaving #page-transition { opacity: 1; transition-duration: 0.38s; }
+html.pt-leaving #page-transition { opacity: 1; transition-duration: 0.25s; }
 @media (prefers-reduced-motion: reduce) {
   #page-transition { display: none; }
 }
@@ -775,8 +775,8 @@ html.pt-leaving #page-transition { opacity: 1; transition-duration: 0.38s; }
   font-size: 0.72rem;
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.12);
   color: var(--primary);
 }
 .jsf-pf-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
@@ -859,8 +859,8 @@ html.pt-leaving #page-transition { opacity: 1; transition-duration: 0.38s; }
   font-size: 0.76rem;
   padding: 7px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.12);
   color: var(--primary);
 }
 .jsf-modal-slice { padding: 16px 0; border-top: 1px solid var(--border); }
@@ -912,11 +912,11 @@ html.pt-leaving #page-transition { opacity: 1; transition-duration: 0.38s; }
 }
 .jsf-radar { display: flex; justify-content: center; }
 .jsf-radar-svg { width: 100%; max-width: 380px; height: auto; }
-.jsf-radar-ring { fill: none; stroke: rgba(99, 102, 241, 0.16); stroke-width: 1; }
-.jsf-radar-spoke { stroke: rgba(99, 102, 241, 0.2); stroke-width: 1; }
+.jsf-radar-ring { fill: none; stroke: rgba(59, 130, 246, 0.16); stroke-width: 1; }
+.jsf-radar-spoke { stroke: rgba(59, 130, 246, 0.2); stroke-width: 1; }
 .jsf-radar-polygon {
-  fill: rgba(99, 102, 241, 0.28);
-  stroke: #6C63FF;
+  fill: rgba(59, 130, 246, 0.28);
+  stroke: var(--primary, #3B82F6);
   stroke-width: 2;
   opacity: 0;
   transition: opacity 0.9s ease;
@@ -953,8 +953,8 @@ html.pt-leaving #page-transition { opacity: 1; transition-duration: 0.38s; }
 .jsf-con-svg { width: 100%; max-width: 460px; height: auto; margin: 0 auto; display: block; }
 .jsf-con-core { fill: var(--primary); }
 .jsf-con-core-label { fill: #fff; font-family: var(--font-display); font-size: 22px; font-weight: 800; }
-.jsf-con-link { stroke: rgba(99, 102, 241, 0.4); stroke-width: 1.5; stroke-dasharray: 4 5; }
-.jsf-con-hub circle { fill: rgba(99, 102, 241, 0.12); stroke: var(--secondary); stroke-width: 1.5; }
+.jsf-con-link { stroke: rgba(59, 130, 246, 0.4); stroke-width: 1.5; stroke-dasharray: 4 5; }
+.jsf-con-hub circle { fill: rgba(59, 130, 246, 0.12); stroke: var(--secondary); stroke-width: 1.5; }
 .jsf-con-ring-label {
   text-align: center;
   font-family: var(--font-mono);
@@ -1066,7 +1066,7 @@ a.jsf-contact-card:hover { transform: translateY(-3px); border-color: var(--prim
 .jsf-form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 .jsf-form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; }
 .jsf-form-group textarea { resize: vertical; min-height: 120px; }

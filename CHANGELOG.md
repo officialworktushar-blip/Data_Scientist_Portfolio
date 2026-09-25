@@ -2,6 +2,46 @@
 
 All notable changes to the portfolio. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## Creative animation suite
+
+Adds the interactive motion layer across all five pages.
+
+### Added
+- **Dual marquee** (Home + subpages, `id="dual-marquee"`): two counter-rotating tracks duplicated by `initMarquee` (idempotent), auto-pausing on hover.
+- **Sticky stacking cards** (Home case study stack): cards pin and stack into a 3D cascade via ScrollTrigger, then un-pin cleanly (`overflow-x: clip` guard retained).
+- **Typing terminal line** (Home hero): types the rotating tagline into a glass terminal mock on an interval; plays after the split-text reveal finishes.
+- **`prefers-reduced-motion`** handling: reveals finish visible instantly, marquee/lenis/progress/page-transitions inert.
+
+### Changed
+- **`assets/js/motion.js`** — `initReveals()` now always installs an rAF-throttled passive scroll failsafe (plus the IntersectionObserver path), so below-the-fold reveals can never be missed even with `content-visibility` sections; Lenis smooth scroll; scroll progress bar; stat count-ups; wrap-split text (`split-in`), rotating word, dual marquee, stacked sticky cards, ScrollTrigger-backed reveals — all single file.
+- **`assets/css/motion.css`** — reveals, count-ups, marquee keyframes, stacking transforms.
+- **Font preloads** in every page `<head>` (SPACE Grotesk + Inter + Inter Tight + JetBrains Mono `font/woff2` with `crossorigin`) to eliminate fallback-face swap layout shift.
+- **`assets/js/page-transition.js`** — 250ms fade/slide between pages.
+- **`js/particles.js`** — connects to the reduce-motion flag.
+
+### QA
+- `pw/animverify.js` verifies **20/20** rows PASS (5 pages × 1440/390 during an eased 4s scroll ride): zero layout shift, frame jank ≤ 3 (>50ms) and ≤ 2 long tasks per ride; plus JS-disabled (all mounts filled) and prefers-reduced-motion (no hidden reveals, animations inert) runs. Report: `ANIM-REPORT.md`.
+- Green baseline harnesses re-run after the suite: sections-check 48/48, pages-check 45/45, hero-check 61/61, responsive-check 80/80, motioncheck + reducedMotion no errors.
+
+## Dark professional design system
+
+Re-skinned the entire site to a near-black, single-accent theme.
+
+### Added
+- `css/theme.css` — single source of truth for the design system (surfaces, one electric-blue accent, text colors, borders, fonts, gradients), loaded last on every page so legacy tokens remap automatically.
+
+### Changed
+- **Background:** `#05070F`/blue-tinted surfaces → `#0A0A0B` base with `#111113` / `#16161A` / `#1C1C22` surface layers (no pure black/white).
+- **Accent:** multi-color system (indigo + cyan + violet + teal) → one deep electric blue (`#3B82F6` family) used only for links, buttons, chart lines and glow accents.
+- **Type:** `#F5F5F7` headings, `#A1A1AA` secondary text; display headings now use **Space Grotesk** (added to the font stack on all pages), body stays Inter, mono stays JetBrains Mono.
+- **Cards:** 1px `rgba(255,255,255,0.08)` borders, soft inner glass, faint blue glow on hover — every page (index, about, projects, skills, contact) unified.
+- Neutralized all leftover bright/pastel surfaces: per-project rainbow gradients, mini-chart colors, radar/constellation tints, CTA mesh blobs, expertise/badge colors all funnel through the single blue accent (CSS-level, so `assets/js/content.js` data is untouched and stays editable).
+- `js/particles.js` + hero canvas colors re-tinted to the blue palette.
+
+### QA
+- Re-verified after re-skin: sections-check 48/48, pages-check 45/45, hero-check 61/61, responsive-check 80/80 (all pages @ 1440/1024/768/390 — no h-scroll, no blank sections, no console errors).
+- Before/after full-page proof screenshots captured via Playwright at 1440px and 390px in `theme-proof/` (see `theme-proof/index.html`).
+
 ## Final pass — performance, accessibility, SEO, responsive QA
 
 ### Added

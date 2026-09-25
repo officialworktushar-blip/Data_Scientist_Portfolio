@@ -32,8 +32,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 212, 170, 0.1);
-  border: 1px solid rgba(0, 212, 170, 0.3);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   color: var(--secondary);
   padding: 8px 18px;
   border-radius: 50px;
@@ -63,6 +63,15 @@
    default, CSS only forces layout (block), never hides content. */
 .line-reveal {
   display: block;
+}
+/* In the two-column hero layout the title column is narrow enough that the
+   pre-font-load fallback face wraps to an extra line, shrinking the hero and
+   causing a layout shift on font swap. Keeping each split line on one line
+   makes title height independent of the font face. */
+@media (min-width: 1025px) {
+  .line-reveal {
+    white-space: nowrap;
+  }
 }
 .hero-sub {
   color: var(--text-muted);
@@ -118,7 +127,7 @@
     var(--gradient-border) border-box;
   border: 1px solid transparent;
   border-radius: 14px;
-  box-shadow: 0 24px 64px rgba(4, 8, 20, 0.6), 0 0 48px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 24px 64px rgba(4, 8, 20, 0.6), 0 0 48px rgba(59, 130, 246, 0.12);
   overflow: hidden;
   min-height: 322px;
 }
@@ -269,8 +278,8 @@
 .stats-panel .stat-card:hover { transform: translateY(-6px); }
 .stat-icon {
   width: 52px; height: 52px;
-  background: rgba(108, 99, 255, 0.1);
-  border: 1px solid rgba(108, 99, 255, 0.18);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.18);
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -366,9 +375,9 @@
   transform: translateY(-8px);
   border-color: var(--primary);
   box-shadow:
-    0 0 0 1px rgba(99, 102, 241, 0.35),
+    0 0 0 1px rgba(59, 130, 246, 0.35),
     0 24px 48px rgba(0, 0, 0, 0.45),
-    0 8px 24px rgba(99, 102, 241, 0.2);
+    0 8px 24px rgba(59, 130, 246, 0.2);
 }
 .expertise-card > * { position: relative; z-index: 1; }
 .bento-title {
@@ -401,9 +410,9 @@
   margin-top: 4px;
 }
 .expertise-tags span {
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: var(--primary);
-  border: 1px solid rgba(108, 99, 255, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   padding: 4px 12px;
   border-radius: 50px;
   font-size: 12px;
@@ -509,7 +518,7 @@
   gap: 8px;
 }
 .project-tech span {
-  background: rgba(108,99,255,0.1);
+  background: rgba(59,130,246,0.1);
   color: var(--text-muted);
   border: 1px solid var(--border);
   padding: 4px 10px;

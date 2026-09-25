@@ -93,7 +93,7 @@
           var dx = a.x - b.x, dy = a.y - b.y;
           var d2 = dx * dx + dy * dy;
           if (d2 < 16900) {
-            ctx.strokeStyle = (a.indigo === b.indigo) ? '#6C63FF' : '#22D3EE';
+            ctx.strokeStyle = (a.indigo === b.indigo) ? '#3B82F6' : '#60A5FA';
             ctx.globalAlpha = (1 - Math.sqrt(d2) / 130) * 0.22;
             ctx.lineWidth = 1;
             ctx.beginPath();
@@ -106,7 +106,7 @@
       ctx.globalAlpha = 1;
       for (i = 0; i < nodes.length; i++) {
         var n = nodes[i];
-        var col = n.indigo ? '108, 99, 255' : '34, 211, 238';
+        var col = n.indigo ? '59, 130, 246' : '96, 165, 250';
         var glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 5);
         glow.addColorStop(0, 'rgba(' + col + ', 0.5)');
         glow.addColorStop(1, 'rgba(' + col + ', 0)');

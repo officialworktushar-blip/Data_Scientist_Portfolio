@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theme proof — before / after</title>
+  <style>
+    body { background: #0A0A0B; color: #F5F5F7; font-family: 'Inter', sans-serif; margin: 0; padding: 32px; }
+    h1 { font-size: 1.2rem; margin: 0 0 24px; font-weight: 600; }
+    .page { max-width: 1480px; margin: 0 auto 48px; }
+    .page h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; color: #A1A1AA; margin: 0 0 12px; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) { .pair { grid-template-columns: 1fr; } }
+    .frame { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; background: #111113; }
+    .frame figcaption { font-size: 0.75rem; color: #A1A1AA; padding: 8px 12px; border-top: 1px solid rgba(255,255,255,0.08); }
+    img { display: block; width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <h1>Theme change proof (Playwright full-page captures, before = multi-color indigo/cyan, after = near-black + single blue accent)</h1>
+
+  <div class="page"><h2>Index</h2>
+    <div class="pair">
+      <figure class="frame"><img src="before/index-1440.png" alt="before index 1440" /><figcaption>Before — index @1440</figcaption></figure>
+      <figure class="frame"><img src="after/index-1440.png" alt="after index 1440" /><figcaption>After — index @1440</figcaption></figure>
+    </div>
+  </div>
+  <div class="page"><h2>Index (mobile)</h2>
+    <div class="pair">
+      <figure class="frame"><img src="before/index-390.png" alt="before index 390" /><figcaption>Before — index @390</figcaption></figure>
+      <figure class="frame"><img src="after/index-390.png" alt="after index 390" /><figcaption>After — index @390</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="page"><h2>About</h2>
+    <div class="pair">
+      <figure class="frame"><img src="before/about-1440.png" alt="before about 1440" /><figcaption>Before — about @1440</figcaption></figure>
+      <figure class="frame"><img src="after/about-1440.png" alt="after about 1440" /><figcaption>After — about @1440</figcaption></figure>
+    </div>
+  </div>
+  <div class="page"><h2>Projects</h2>
+    <div class="pair">
+      <figure class="frame"><img src="before/projects-1440.png" alt="before projects 1440" /><figcaption>Before — projects @1440</figcaption></figure>
+      <figure class="frame"><img src="after/projects-1440.png" alt="after projects 1440" /><figcaption>After — projects @1440</figcaption></figure>
+    </div>
+  </div>
+  <div class="page"><h2>Skills</h2>
+    <div class="pair">
+      <figure class="frame"><img src="before/skills-1440.png" alt="before skills 1440" /><figcaption>Before — skills @1440</figcaption></figure>
+      <figure class="frame"><img src="after/skills-1440.png" alt="after skills 1440" /><figcaption>After — skills @1440</figcaption></figure>
+    </div>
+  </div>
+  <div class="page"><h2>Contact</h2>
+    <div class="pair">
+      <figure class="frame"><img src="before/contact-1440.png" alt="before contact 1440" /><figcaption>Before — contact @1440</figcaption></figure>
+      <figure class="frame"><img src="after/contact-1440.png" alt="after contact 1440" /><figcaption>After — contact @1440</figcaption></figure>
+    </div>
+  </div>
+</body>
+</html>

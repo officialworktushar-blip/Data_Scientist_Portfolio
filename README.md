@@ -17,16 +17,16 @@ All content lives in **`assets/js/content.js`** as a single `SITE` object:
 
 Footer social links are also driven from `SITE.socials` on every page.
 
-### Colors and theme
-Defined once in **`css/style.css`** → `:root`:
+### Colors, theme and fonts
+The whole design system lives in **`css/theme.css`** (loaded last on every page) — surfaces, the single accent, text colors, borders, fonts and gradients are all CSS variables there. Tweak once, it applies everywhere:
 
-- `--primary` / `--primary-dark` — indigo accent (chosen for AA contrast on the near-black background; keep it ≥ `#7376F3` if you tune it)
-- `--secondary` — cyan (`#22D3EE`), `--accent` — violet (`#A78BFA`)
-- `--dark`…`--dark-4` — background surface swatches
-- `--text` / `--text-muted` — foreground text colors
-- `--gradient` — brand gradient used by buttons/glows
+- `--bg` `#0A0A0B`, `--surface-1/2/3` `#111113/#16161A/#1C1C22` — page and card layers (never pure black/white).
+- `--accent` `#3B82F6`, `--accent-600` `#2563EB`, `--accent-400` `#60A5FA` — the one electric-blue accent for links, buttons, chart lines and glow accents.
+- `--text` `#F5F5F7` (headings), `--text-secondary` `#A1A1AA` (body/labels).
+- `--border-subtle` `rgba(255,255,255,0.08)` — 1px card borders + soft inner glass.
+- `--font-display` (`Space Grotesk`), `--font-main` (`Inter`), `--font-mono` (`JetBrains Mono` for stats/code/data labels).
 
-QA rule: the page is dark-themed, so any text color you customise must keep a contrast ratio ≥ 4.5:1 against `--dark` for AA.
+Legacy token names (`--primary`, `--dark`, `--border`, `--gradient`, …) are aliased to the same values, so nothing else needs editing. Keep any custom accent at AA contrast (4.5:1) against the surfaces.
 
 ### Animations and motion
 Animation/layout settings live in three places:
@@ -55,3 +55,4 @@ The contact form validates locally and shows a success state. To wire it to real
 - Visible keyboard focus (`:focus-visible`), AA color contrast, `aria-hidden` on all decorative canvases/SVGs, labelled dialog + SVG charts.
 - Fonts are preloaded/asynchronously loaded; Font Awesome loads non-blocking; below-the-fold sections lazy-paint via `content-visibility`; particle canvas pauses when the tab is hidden.
 - QA harnesses (Playwright) re-verify all 5 pages at 1440/1024/768/390px with no horizontal scroll, blank sections, stuck reveals, or console errors.
+- Animation QA is tracked in `ANIM-REPORT.md` (20/20 PASS: no layout shift / frame jank / long tasks during a slow scroll on every page, plus JS-off and reduced-motion rows).

@@ -20,7 +20,7 @@
   var MONO = "JetBrains Mono, monospace";
   var DISPLAY = "Inter Tight, 'Inter', sans-serif";
 
-  var CX = '#6366F1', CY = '#22D3EE', CV = '#A78BFA', CG = '#34D399', CA = '#FBBF24';
+  var CX = '#3B82F6', CY = '#60A5FA', CV = '#2563EB', CG = '#60A5FA', CA = '#93C5FD';
   var CM = '#93A3BE', TEXT = '#E7EDF6', DARK = 'rgba(10, 15, 28, 0.55)';
 
   /* ============================ CONFIG (edit me) ========================== */
@@ -382,7 +382,7 @@
   BUILD.bigdata = function (s) {
     var g = s.g, cfg = CONFIG.bigdata;
     defsGrad(g, 'beg' + s.i, CX, CV);
-    svg('path', { d: rr(16, 68, 272, 32, 8), fill: 'rgba(99,102,241,0.06)', stroke: 'rgba(148,163,184,0.2)', 'stroke-width': 1 }, g);
+    svg('path', { d: rr(16, 68, 272, 32, 8), fill: 'rgba(59,130,246,0.06)', stroke: 'rgba(148,163,184,0.2)', 'stroke-width': 1 }, g);
     T(20, 62, 'topic.events', {}, g);
     s.evs = [];
     for (var i = 0; i < cfg.particles; i++) {
@@ -398,7 +398,7 @@
     });
     svg('line', { x1: 290, y1: 76, x2: 300, y2: 76, stroke: 'rgba(148,163,184,0.4)', 'stroke-width': 1.5 }, g);
     svg('path', { d: 'M300,71 L307,76 L300,81 Z', fill: 'rgba(148,163,184,0.4)' }, g);
-    s.spark = svg('path', { d: rr(298, 40, 86, 64, 12), fill: 'rgba(99,102,241,0.12)', stroke: 'rgba(99,102,241,0.5)', 'stroke-width': 1.2 }, g);
+    s.spark = svg('path', { d: rr(298, 40, 86, 64, 12), fill: 'rgba(59,130,246,0.12)', stroke: 'rgba(59,130,246,0.5)', 'stroke-width': 1.2 }, g);
     T(341, 66, 'SPARK', { size: 10, anchor: 'middle', family: DISPLAY, weight: 800, fill: TEXT }, g);
     T(341, 80, 'cluster', { size: 6, anchor: 'middle' }, g);
     s.eps = T(384, 26, '', { anchor: 'end', size: 10, family: DISPLAY, weight: 800, fill: TEXT }, g);
@@ -416,7 +416,7 @@
     }
     var v = cfg.epsBase + cfg.epsJit * Math.sin(s.t / 700 + 1);
     s.eps.textContent = v.toFixed(2) + 'M';
-    s.spark.setAttribute('stroke', Math.sin(s.t / 400) > 0.3 ? 'rgba(34,211,238,0.8)' : 'rgba(99,102,241,0.5)');
+    s.spark.setAttribute('stroke', Math.sin(s.t / 400) > 0.3 ? 'rgba(96,165,250,0.8)' : 'rgba(59,130,246,0.5)');
   };
 
   /* ---- 6. A/B Testing: table + narrowing CI + WINNER --------------------- */

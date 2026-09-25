@@ -11,7 +11,7 @@
 
   let W, H, particles = [], mouse = { x: -999, y: -999 };
   const COUNT = reduceMotion ? 40 : 42;
-  const COLORS = ['#6366F1', '#22D3EE', '#A78BFA'];
+  const COLORS = ['#3B82F6', '#60A5FA', '#2563EB'];
   const LINK_DIST = 120;
 
   function resize() {
@@ -64,7 +64,7 @@
   function drawLines() {
     ctx.save();
     ctx.lineWidth = 0.5;
-    ctx.strokeStyle = '#6366F1';
+    ctx.strokeStyle = '#3B82F6';
     const n = particles.length;
     for (let i = 0; i < n; i++) {
       const px = particles[i].x;

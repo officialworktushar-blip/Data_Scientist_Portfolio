@@ -301,17 +301,20 @@
 }
 
 /* ---- SECTION TITLE REVEAL ---- */
+/* Visible by default; hidden state only applies once JS ("js" on <html>)
+   confirms animations may run. Failsafe class "reveal-all" forces visible. */
 .section-title .word {
   display: inline-block;
   overflow: hidden;
 }
-.section-title .word span {
+.js .section-title .word span {
   display: inline-block;
   transform: translateY(100%);
   opacity: 0;
   transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease;
 }
-.section-title.revealed .word span {
+.js .section-title.revealed .word span,
+.js.reveal-all .section-title .word span {
   transform: translateY(0);
   opacity: 1;
 }

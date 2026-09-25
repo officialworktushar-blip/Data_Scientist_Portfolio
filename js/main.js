@@ -39,14 +39,7 @@
   });
 })();
 
-/* ---- Navbar Scroll ---- */
-(function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-})();
+/* ---- Navbar Scroll (handled by assets/js/motion.js) ---- */
 
 /* ---- Hamburger Mobile Menu ---- */
 (function initHamburger() {
@@ -65,60 +58,7 @@
   });
 })();
 
-/* ---- Scroll-Reveal (AOS-like) ---- */
-(function initAOS() {
-  const els = document.querySelectorAll('[data-aos]');
-  if (!els.length) return;
-
-  function applyDelay(el) {
-    const delay = el.dataset.aosDelay;
-    if (delay) el.style.transitionDelay = delay + 'ms';
-  }
-
-  function checkReveal() {
-    const winH = window.innerHeight;
-    els.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < winH * 0.92) {
-        el.classList.add('aos-animate');
-      }
-    });
-  }
-
-  els.forEach(applyDelay);
-  window.addEventListener('scroll', checkReveal, { passive: true });
-  checkReveal();
-})();
-
-/* ---- Counter Animation ---- */
-(function initCounters() {
-  const counters = document.querySelectorAll('.counter');
-  if (!counters.length) return;
-
-  let triggered = false;
-  function startCounters() {
-    if (triggered) return;
-    const statsSection = document.querySelector('.stats-section');
-    if (!statsSection) return;
-    const rect = statsSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.85) {
-      triggered = true;
-      counters.forEach(c => {
-        const target = +c.dataset.target;
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) { current = target; clearInterval(timer); }
-          c.textContent = Math.floor(current);
-        }, 16);
-      });
-    }
-  }
-  window.addEventListener('scroll', startCounters, { passive: true });
-  startCounters();
-})();
+/* ---- Scroll-Reveal + Counters handled by assets/js/motion.js ---- */
 
 /* ---- Active Nav Link ---- */
 (function setActiveNav() {

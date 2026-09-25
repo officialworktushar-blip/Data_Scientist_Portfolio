@@ -2,26 +2,27 @@
    GLOBAL STYLES - Data Scientist Portfolio
    ================================================ */
 :root {
-  --primary: #6C63FF;
-  --primary-dark: #5A52D5;
-  --secondary: #00D4AA;
-  --accent: #FF6B6B;
-  --dark: #0A0A1A;
-  --dark-2: #111128;
-  --dark-3: #1A1A35;
-  --dark-4: #222244;
-  --card-bg: #13132A;
-  --text: #E8E8F0;
-  --text-muted: #8888AA;
-  --border: rgba(108, 99, 255, 0.2);
-  --gradient: linear-gradient(135deg, #6C63FF, #00D4AA);
-  --gradient-2: linear-gradient(135deg, #FF6B6B, #6C63FF);
-  --shadow: 0 20px 60px rgba(108, 99, 255, 0.15);
+  --primary: #7376F3;
+  --primary-dark: #5C5FE8;
+  --secondary: #22D3EE;
+  --accent: #A78BFA;
+  --dark: #05070F;
+  --dark-2: #0A0F1C;
+  --dark-3: #0F1526;
+  --dark-4: #16203A;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --text: #E7EDF6;
+  --text-muted: #93A3BE;
+  --border: rgba(148, 163, 184, 0.16);
+  --gradient: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+  --gradient-2: linear-gradient(135deg, #22D3EE 0%, #6366F1 100%);
+  --shadow: 0 24px 64px rgba(4, 8, 20, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.02);
   --radius: 16px;
   --radius-lg: 24px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --font-main: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Inter Tight', 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 *, *::before, *::after {
@@ -33,6 +34,44 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+}
+
+/* html clips horizontal overflow (site never scrolls sideways); 'clip' keeps
+   position: sticky intact, unlike 'hidden' which would break it. */
+html {
+  overflow-x: clip;
+}
+
+/* ---- Accessibility ---- */
+.skip-link {
+  position: fixed;
+  top: -64px;
+  left: 16px;
+  z-index: 99999;
+  padding: 10px 18px;
+  background: var(--secondary);
+  color: #04122B;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+#main {
+  scroll-margin-top: 90px;
 }
 
 body {
@@ -91,10 +130,11 @@ body {
   transition: all var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(10, 10, 26, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(9, 13, 26, 0.6);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   padding: 12px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
 }
 .nav-container {
   max-width: 1300px;
@@ -377,22 +417,17 @@ body {
   font-size: 14px;
 }
 
-/* ---- AOS (mini implementation via JS) ---- */
-[data-aos] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* ---- Reveal system lives in assets/css/motion.css (data-reveal) ---- */
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-[data-aos].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-[data-aos="zoom-in"] { transform: scale(0.9); }
-[data-aos="zoom-in"].aos-animate { transform: scale(1); }
-[data-aos="fade-left"] { transform: translateX(40px); }
-[data-aos="fade-left"].aos-animate { transform: translateX(0); }
-[data-aos="fade-right"] { transform: translateX(-40px); }
-[data-aos="fade-right"].aos-animate { transform: translateX(0); }
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {

@@ -4,19 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Dr. Alex Morgan — Data Scientist</title>
+  <meta name="description" content="About Dr. Alex Morgan — 15 years of data science and ML leadership. Education, certifications, a values-driven approach, and a downloadable resume." />
+  <link rel="canonical" href="https://alexmorgan.ai/about.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#05070F" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Alex Morgan — Data Scientist" />
+  <meta property="og:title" content="About | Dr. Alex Morgan" />
+  <meta property="og:description" content="15 years of data science and ML leadership — education, certifications, values, and a downloadable resume." />
+  <meta property="og:url" content="https://alexmorgan.ai/about.html" />
+  <meta property="og:image" content="https://alexmorgan.ai/assets/og-cover.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About | Dr. Alex Morgan" />
+  <meta name="twitter:description" content="15 years of data science and ML leadership — education, certifications, values, and a downloadable resume." />
+  <meta name="twitter:image" content="https://alexmorgan.ai/assets/og-cover.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.classList.add('reduce-motion');
+      }
+      setTimeout(function () {
+        d.classList.add('reveal-all');
+
+      }, 2000);
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="assets/css/motion.css" />
+  <link rel="stylesheet" href="assets/css/sections.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" as="style" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" /></noscript>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="assets/js/content.js"></script>
+  <script defer src="assets/js/sections.js"></script>
+  <script defer src="assets/js/motion.js"></script>
 </head>
 <body>
-  <canvas id="particle-canvas"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <div class="cursor-outer"></div>
   <div class="cursor-inner"></div>
 
   <!-- NAV -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Primary">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
         <span class="logo-icon">AM</span>
@@ -36,12 +82,14 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-content">
-      <div class="section-badge" data-aos="fade-up">About Me</div>
-      <h1 data-aos="fade-up" data-aos-delay="100">The Story Behind <span class="gradient-text">the Data</span></h1>
-      <p data-aos="fade-up" data-aos-delay="200">15+ years of turning complex data challenges into elegant, profit-driving solutions for America's leading companies.</p>
+      <div class="section-badge" data-reveal="up">About Me</div>
+      <h1 data-split>The Story Behind <span class="gradient-text">the Data</span></h1>
+      <p data-reveal="up">15+ years of turning complex data challenges into elegant, profit-driving solutions for America's leading companies.</p>
     </div>
   </section>
 
@@ -49,7 +97,7 @@
   <section class="about-bio">
     <div class="section-container">
       <div class="about-grid">
-        <div class="about-portrait" data-aos="fade-right">
+        <div class="about-portrait" data-reveal="up">
           <div class="portrait-frame">
             <i class="fas fa-user-tie"></i>
           </div>
@@ -58,7 +106,7 @@
             <span>Years Experience</span>
           </div>
         </div>
-        <div class="about-content" data-aos="fade-left">
+        <div class="about-content" data-reveal="up">
           <div class="section-badge">Bio</div>
           <h2>Transforming Raw Data into <span class="gradient-text">Competitive Advantage</span></h2>
           <p>
@@ -82,7 +130,7 @@
             <a href="contact.html" class="btn-primary">
               <i class="fas fa-envelope"></i> Let's Talk
             </a>
-            <a href="#" class="btn-outline" onclick="downloadResume()">
+            <a href="/resume.pdf" class="btn-outline" download>
               <i class="fas fa-download"></i> Download CV
             </a>
           </div>
@@ -91,76 +139,26 @@
     </div>
   </section>
 
-  <!-- SKILLS BARS SECTION -->
-  <section class="skills-section">
-    <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
-        <div class="section-badge">Proficiency</div>
-        <h2 class="section-title">Technical <span class="gradient-text">Skill Levels</span></h2>
-        <p class="section-desc">Depth of expertise built through 15+ years of real-world application.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skills-group" data-aos="fade-right">
-          <h3>🤖 Machine Learning & AI</h3>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Python / ML Libraries</span><span class="skill-pct">98%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="98"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Deep Learning (PyTorch/TF)</span><span class="skill-pct">95%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="95"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">NLP & LLMs</span><span class="skill-pct">92%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="92"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Computer Vision</span><span class="skill-pct">88%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Reinforcement Learning</span><span class="skill-pct">82%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="82"></div></div>
-          </div>
-        </div>
-        <div class="skills-group" data-aos="fade-left">
-          <h3>☁️ Cloud & Data Engineering</h3>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">AWS / GCP / Azure</span><span class="skill-pct">94%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="94"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Apache Spark / Hadoop</span><span class="skill-pct">90%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">SQL & NoSQL Databases</span><span class="skill-pct">96%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="96"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Docker & Kubernetes</span><span class="skill-pct">87%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="87"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span class="skill-name">Data Visualization</span><span class="skill-pct">93%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="93"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- IMPACT STATS -->
+  <section class="jsf-about-stats-section" data-section="about-stats" aria-label="Impact by the numbers"></section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section class="jsf-about-edu-section" data-section="about-edu" aria-label="Education and certifications"></section>
+
+  <!-- VALUES -->
+  <section class="jsf-about-values-section" data-section="about-values" aria-label="Working principles"></section>
 
   <!-- EXPERIENCE TIMELINE -->
   <section class="timeline-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">Career Journey</div>
         <h2 class="section-title">15 Years of <span class="gradient-text">Excellence</span></h2>
         <p class="section-desc">A decade and a half of progressive growth across the world's top organizations.</p>
       </div>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-content" data-aos="fade-right">
+          <div class="timeline-content" data-reveal="up">
             <span class="timeline-year">2022 – Present</span>
             <h3>Principal Data Scientist</h3>
             <div class="timeline-company">Amazon Web Services (AWS)</div>
@@ -172,7 +170,7 @@
         <div class="timeline-item">
           <div class="timeline-empty"></div>
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-aos="fade-left">
+          <div class="timeline-content" data-reveal="up">
             <span class="timeline-year">2019 – 2022</span>
             <h3>Lead Data Scientist</h3>
             <div class="timeline-company">Goldman Sachs</div>
@@ -180,7 +178,7 @@
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-content" data-aos="fade-right">
+          <div class="timeline-content" data-reveal="up">
             <span class="timeline-year">2016 – 2019</span>
             <h3>Senior Data Scientist</h3>
             <div class="timeline-company">Microsoft Research</div>
@@ -192,7 +190,7 @@
         <div class="timeline-item">
           <div class="timeline-empty"></div>
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-aos="fade-left">
+          <div class="timeline-content" data-reveal="up">
             <span class="timeline-year">2013 – 2016</span>
             <h3>Data Scientist</h3>
             <div class="timeline-company">Netflix</div>
@@ -200,7 +198,7 @@
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-content" data-aos="fade-right">
+          <div class="timeline-content" data-reveal="up">
             <span class="timeline-year">2011 – 2013</span>
             <h3>Quantitative Analyst</h3>
             <div class="timeline-company">JP Morgan Chase</div>
@@ -212,7 +210,7 @@
         <div class="timeline-item">
           <div class="timeline-empty"></div>
           <div class="timeline-dot"></div>
-          <div class="timeline-content" data-aos="fade-left">
+          <div class="timeline-content" data-reveal="up">
             <span class="timeline-year">2008 – 2011</span>
             <h3>Research Scientist (Ph.D.)</h3>
             <div class="timeline-company">MIT CSAIL</div>
@@ -226,55 +224,55 @@
   <!-- CERTIFICATIONS -->
   <section class="certs-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">Credentials</div>
         <h2 class="section-title">Certifications & <span class="gradient-text">Awards</span></h2>
         <p class="section-desc">Industry-recognized credentials and competitive achievements.</p>
       </div>
       <div class="certs-grid">
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fab fa-aws"></i></div>
           <h4>AWS ML Specialist</h4>
           <span>Amazon Web Services</span>
           <span class="cert-year">2023</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fab fa-google"></i></div>
           <h4>GCP Professional ML Engineer</h4>
           <span>Google Cloud</span>
           <span class="cert-year">2022</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fas fa-trophy"></i></div>
           <h4>Kaggle Grandmaster</h4>
           <span>Top 0.2% Worldwide</span>
           <span class="cert-year">2021</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
           <h4>Azure Data Scientist</h4>
           <span>Microsoft Certified</span>
           <span class="cert-year">2022</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
           <h4>Deep Learning Specialization</h4>
           <span>Andrew Ng / DeepLearning.AI</span>
           <span class="cert-year">2020</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fas fa-medal"></i></div>
           <h4>NSF Graduate Fellowship</h4>
           <span>National Science Foundation</span>
           <span class="cert-year">2009</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fas fa-brain"></i></div>
           <h4>TensorFlow Developer</h4>
           <span>Google Certified</span>
           <span class="cert-year">2021</span>
         </div>
-        <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="cert-card" data-reveal="up">
           <div class="cert-icon"><i class="fas fa-database"></i></div>
           <h4>Databricks Certified</h4>
           <span>Spark & ML Engineer</span>
@@ -284,7 +282,15 @@
     </div>
   </section>
 
+  <!-- HOW I WORK (reused from index) -->
+  <section class="js-process-section" data-section="process" aria-label="How I work"></section>
+
+  <!-- CTA SECTION (reused from index) -->
+  <section class="js-cta-section" data-section="cta" aria-label="Call to action"></section>
+
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -293,13 +299,7 @@
           <span class="logo-text">Alex<span class="accent">Morgan</span></span>
         </a>
         <p>Senior Data Scientist | AI &amp; ML Expert | San Francisco, CA</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-        </div>
+        <div class="social-links" data-section="socials" data-role="socials"></div>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -312,17 +312,17 @@
         </div>
         <div class="footer-col">
           <h4>Services</h4>
-          <a href="#">Machine Learning</a>
-          <a href="#">Data Engineering</a>
-          <a href="#">AI Consulting</a>
-          <a href="#">MLOps</a>
-          <a href="#">Workshops</a>
+          <a href="skills.html">Machine Learning</a>
+          <a href="skills.html">Data Engineering</a>
+          <a href="contact.html">AI Consulting</a>
+          <a href="skills.html">MLOps</a>
+          <a href="contact.html">Workshops</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:alex@alexmorgan.ai"><i class="fas fa-envelope"></i> alex@alexmorgan.ai</a>
           <a href="tel:+14155551234"><i class="fas fa-phone"></i> +1 (415) 555-1234</a>
-          <a href="#"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
+          <a href="contact.html"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
         </div>
       </div>
     </div>
@@ -332,29 +332,10 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Skill bars animation
-    (function () {
-      let triggered = false;
-      function animateBars() {
-        if (triggered) return;
-        const section = document.querySelector('.skills-section');
-        if (!section) return;
-        if (section.getBoundingClientRect().top < window.innerHeight * 0.85) {
-          triggered = true;
-          document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-            bar.style.width = bar.dataset.pct + '%';
-          });
-        }
-      }
-      window.addEventListener('scroll', animateBars, { passive: true });
-      animateBars();
-    })();
-    function downloadResume() { alert('Resume download will be available soon!'); }
-  </script>
+
+  <div id="page-transition" aria-hidden="true"></div>
+  <script src="assets/js/page-transition.js"></script>
 </body>
 </html>

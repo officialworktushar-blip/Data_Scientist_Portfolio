@@ -6,9 +6,13 @@
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
+  // Respect prefers-reduced-motion: render one static frame, no animation loop.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   let W, H, particles = [], mouse = { x: -999, y: -999 };
-  const COUNT = 80;
-  const COLORS = ['#6C63FF', '#00D4AA', '#FF6B6B'];
+  const COUNT = reduceMotion ? 40 : 42;
+  const COLORS = ['#6366F1', '#22D3EE', '#A78BFA'];
+  const LINK_DIST = 120;
 
   function resize() {
     W = canvas.width = window.innerWidth;
@@ -39,10 +43,11 @@
     // mouse repel
     const dx = this.x - mouse.x;
     const dy = this.y - mouse.y;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    if (dist < 80) {
-      this.x += dx / dist * 1.5;
-      this.y += dy / dist * 1.5;
+    const d2 = dx * dx + dy * dy;
+    if (d2 < 6400 && d2 > 0) {
+      const inv = 1 / Math.sqrt(d2);
+      this.x += dx * inv * 1.5;
+      this.y += dy * inv * 1.5;
     }
   };
   Particle.prototype.draw = function () {
@@ -57,44 +62,53 @@
   };
 
   function drawLines() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          ctx.save();
-          ctx.globalAlpha = (1 - dist / 120) * 0.12;
-          ctx.strokeStyle = '#6C63FF';
-          ctx.lineWidth = 0.5;
+    ctx.save();
+    ctx.lineWidth = 0.5;
+    ctx.strokeStyle = '#6366F1';
+    const n = particles.length;
+    for (let i = 0; i < n; i++) {
+      const px = particles[i].x;
+      const py = particles[i].y;
+      for (let j = i + 1; j < n; j++) {
+        const dx = px - particles[j].x;
+        const dy = py - particles[j].y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < LINK_DIST * LINK_DIST) {
+          const d = Math.sqrt(d2);
+          ctx.globalAlpha = (1 - d / LINK_DIST) * 0.12;
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.moveTo(px, py);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
-          ctx.restore();
         }
       }
     }
+    ctx.restore();
   }
 
   function init() {
     resize();
     particles = [];
     for (let i = 0; i < COUNT; i++) {
-      const p = new Particle();
-      particles.push(p);
+      particles.push(new Particle());
     }
   }
 
+  let rafId = null;
   function loop() {
     ctx.clearRect(0, 0, W, H);
     drawLines();
     particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(loop);
+    if (!reduceMotion && !document.hidden) rafId = requestAnimationFrame(loop);
   }
 
   window.addEventListener('resize', () => { resize(); });
   window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  document.addEventListener('visibilitychange', () => {
+    if (reduceMotion) return;
+    cancelAnimationFrame(rafId);
+    if (!document.hidden) rafId = requestAnimationFrame(loop);
+  });
 
   init();
   loop();

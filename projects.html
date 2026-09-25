@@ -4,19 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Dr. Alex Morgan — Data Scientist</title>
+  <meta name="description" content="Data science &amp; ML case studies by Dr. Alex Morgan — fraud detection, recommendation engines, LLM RAG pipelines, demand forecasting and more, with problem–data–approach–results breakdowns." />
+  <link rel="canonical" href="https://alexmorgan.ai/projects.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#05070F" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Alex Morgan — Data Scientist" />
+  <meta property="og:title" content="Projects | Dr. Alex Morgan" />
+  <meta property="og:description" content="Filterable case studies with problem, data, approach, results and stack for every project." />
+  <meta property="og:url" content="https://alexmorgan.ai/projects.html" />
+  <meta property="og:image" content="https://alexmorgan.ai/assets/og-cover.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects | Dr. Alex Morgan" />
+  <meta name="twitter:description" content="Filterable case studies with problem, data, approach, results and stack for every project." />
+  <meta name="twitter:image" content="https://alexmorgan.ai/assets/og-cover.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.classList.add('reduce-motion');
+      }
+      setTimeout(function () {
+        d.classList.add('reveal-all');
+
+      }, 2000);
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="assets/css/motion.css" />
+  <link rel="stylesheet" href="assets/css/sections.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" as="style" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" /></noscript>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="assets/js/content.js"></script>
+  <script defer src="assets/js/sections.js"></script>
+  <script defer src="assets/js/motion.js"></script>
 </head>
 <body>
-  <canvas id="particle-canvas"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <div class="cursor-outer"></div>
   <div class="cursor-inner"></div>
 
   <!-- NAV -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Primary">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
         <span class="logo-icon">AM</span>
@@ -36,188 +82,46 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-content">
-      <div class="section-badge" data-aos="fade-up">Portfolio</div>
-      <h1 data-aos="fade-up" data-aos-delay="100">200+ Projects. <span class="gradient-text">Real Results.</span></h1>
-      <p data-aos="fade-up" data-aos-delay="200">From healthcare AI to FinTech fraud detection — a track record of delivering measurable business impact.</p>
+      <div class="section-badge" data-reveal="up">Portfolio</div>
+      <h1 data-split>200+ Projects. <span class="gradient-text">Real Results.</span></h1>
+      <p data-reveal="up">From healthcare AI to FinTech fraud detection — a track record of delivering measurable business impact.</p>
     </div>
   </section>
 
-  <!-- ALL PROJECTS SECTION -->
-  <section class="projects-page">
-    <div class="section-container">
-      <!-- Filter Bar -->
-      <div class="filter-bar" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="ml">Machine Learning</button>
-        <button class="filter-btn" data-filter="nlp">NLP / GenAI</button>
-        <button class="filter-btn" data-filter="fintech">FinTech</button>
-        <button class="filter-btn" data-filter="health">Healthcare</button>
-        <button class="filter-btn" data-filter="cv">Computer Vision</button>
-        <button class="filter-btn" data-filter="data">Data Engineering</button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="all-projects-grid" id="projects-grid">
-
-        <div class="project-full-card" data-category="health" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-visual" style="background:linear-gradient(135deg,#667eea,#764ba2)">
-            <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">Healthcare AI</div>
-            <h3>Patient Risk Prediction Engine</h3>
-            <p>ML model predicting 30-day readmission risk for a top US hospital network. 94% AUC, saving $8M annually.</p>
-            <div class="project-metrics"><span><i class="fas fa-chart-line"></i> 94% AUC</span><span><i class="fas fa-dollar-sign"></i> $8M Saved</span></div>
-            <div class="project-tech"><span>Python</span><span>XGBoost</span><span>AWS</span><span>SHAP</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="ml" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-visual" style="background:linear-gradient(135deg,#f7971e,#ffd200)">
-            <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">E-Commerce / ML</div>
-            <h3>Real-Time Recommendation System</h3>
-            <p>Deep learning rec engine for Fortune 500 retailer — +340% CTR and $22M in incremental revenue.</p>
-            <div class="project-metrics"><span><i class="fas fa-mouse-pointer"></i> +340% CTR</span><span><i class="fas fa-dollar-sign"></i> $22M</span></div>
-            <div class="project-tech"><span>PyTorch</span><span>Redis</span><span>GCP</span><span>Feast</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="fintech" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-visual" style="background:linear-gradient(135deg,#11998e,#38ef7d)">
-            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">FinTech</div>
-            <h3>Fraud Detection at Scale</h3>
-            <p>Real-time fraud pipeline processing 10M+ transactions/day with sub-100ms latency for a major US bank.</p>
-            <div class="project-metrics"><span><i class="fas fa-shield-alt"></i> 99.2% Precision</span><span><i class="fas fa-bolt"></i> &lt;100ms</span></div>
-            <div class="project-tech"><span>Spark</span><span>Kafka</span><span>TensorFlow</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="nlp" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-visual" style="background:linear-gradient(135deg,#ee0979,#ff6a00)">
-            <div class="project-icon"><i class="fas fa-comments"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">NLP / GenAI</div>
-            <h3>Enterprise RAG Chatbot</h3>
-            <p>Custom LLM-powered RAG system for a 20,000-employee company — reducing support ticket volume by 67%.</p>
-            <div class="project-metrics"><span><i class="fas fa-robot"></i> GPT-4 Based</span><span><i class="fas fa-arrow-down"></i> -67% Tickets</span></div>
-            <div class="project-tech"><span>LangChain</span><span>OpenAI</span><span>Pinecone</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="cv" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-visual" style="background:linear-gradient(135deg,#4776e6,#8e54e9)">
-            <div class="project-icon"><i class="fas fa-eye"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">Computer Vision</div>
-            <h3>Retail Shelf Monitoring AI</h3>
-            <p>Real-time CV system for shelf out-of-stock detection across 2,000 stores — improving availability by 23%.</p>
-            <div class="project-metrics"><span><i class="fas fa-eye"></i> 97% Accuracy</span><span><i class="fas fa-store"></i> 2K Stores</span></div>
-            <div class="project-tech"><span>YOLO v8</span><span>PyTorch</span><span>Edge AI</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-visual" style="background:linear-gradient(135deg,#00c6ff,#0072ff)">
-            <div class="project-icon"><i class="fas fa-database"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">Data Engineering</div>
-            <h3>Lakehouse Data Platform</h3>
-            <p>Designed and built a petabyte-scale data lakehouse on AWS for a Fortune 100 — reducing data processing costs by 55%.</p>
-            <div class="project-metrics"><span><i class="fas fa-database"></i> 1PB+ Data</span><span><i class="fas fa-arrow-down"></i> -55% Cost</span></div>
-            <div class="project-tech"><span>Databricks</span><span>Delta Lake</span><span>AWS</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="nlp" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-visual" style="background:linear-gradient(135deg,#ff9a9e,#fecfef)">
-            <div class="project-icon"><i class="fas fa-heart"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">NLP / Sentiment</div>
-            <h3>Customer Sentiment Analytics</h3>
-            <p>Multi-source NLP pipeline analyzing 5M+ reviews/month — driving product decisions for a top-5 US retailer.</p>
-            <div class="project-metrics"><span><i class="fas fa-poll"></i> 92% Accuracy</span><span><i class="fas fa-comments"></i> 5M Reviews</span></div>
-            <div class="project-tech"><span>BERT</span><span>Spark NLP</span><span>Tableau</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="fintech" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-visual" style="background:linear-gradient(135deg,#56ccf2,#2f80ed)">
-            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">FinTech / Quant</div>
-            <h3>Algorithmic Trading Engine</h3>
-            <p>ML-driven quant strategy for equity markets — achieving a Sharpe ratio of 2.8 and 31% annualized returns.</p>
-            <div class="project-metrics"><span><i class="fas fa-chart-line"></i> 31% Returns</span><span><i class="fas fa-balance-scale"></i> Sharpe 2.8</span></div>
-            <div class="project-tech"><span>Python</span><span>LSTM</span><span>Bloomberg API</span></div>
-          </div>
-        </div>
-
-        <div class="project-full-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-visual" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">
-            <div class="project-icon"><i class="fas fa-truck"></i></div>
-            <div class="project-overlay"><a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a></div>
-          </div>
-          <div class="project-info">
-            <div class="project-category">Supply Chain / ML</div>
-            <h3>Supply Chain Optimization</h3>
-            <p>ML model for demand forecasting and logistics routing — reducing operational costs by 28% for a national logistics firm.</p>
-            <div class="project-metrics"><span><i class="fas fa-arrow-down"></i> -28% Costs</span><span><i class="fas fa-map-marker-alt"></i> 500 Routes</span></div>
-            <div class="project-tech"><span>Prophet</span><span>OR-Tools</span><span>GCP</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <!-- PROJECTS (config-driven filter grid + case-study modal) -->
+  <section class="jsf-projects-section" data-section="projects" aria-label="Project portfolio with case studies"></section>
 
   <!-- FEATURED CASE STUDY -->
   <section class="case-study-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">Deep Dive</div>
         <h2 class="section-title">Featured <span class="gradient-text">Case Study</span></h2>
         <p class="section-desc">A closer look at one of the most impactful projects in the portfolio.</p>
       </div>
-      <div class="case-study-card" data-aos="fade-up">
+      <div class="case-study-card" data-reveal="up">
         <div class="case-study-header">
           <div class="case-visual">🏥</div>
           <div class="case-metrics">
             <div class="case-metric">
-              <span class="case-metric-val">94%</span>
+              <span class="case-metric-val" data-count="94" data-suffix="%">94%</span>
               <span class="case-metric-label">AUC Score</span>
             </div>
             <div class="case-metric">
-              <span class="case-metric-val">$8M</span>
+              <span class="case-metric-val" data-count="8" data-decimals="0" data-prefix="$" data-suffix="M">$8M</span>
               <span class="case-metric-label">Annual Savings</span>
             </div>
             <div class="case-metric">
-              <span class="case-metric-val">-62%</span>
+              <span class="case-metric-val" data-count="-62" data-suffix="%">-62%</span>
               <span class="case-metric-label">Readmission Rate</span>
             </div>
             <div class="case-metric">
-              <span class="case-metric-val">2.1M</span>
+              <span class="case-metric-val" data-count="2.1" data-decimals="1" data-suffix="M">2.1M</span>
               <span class="case-metric-label">Patients Served</span>
             </div>
           </div>
@@ -248,30 +152,30 @@
   <!-- GITHUB STATS -->
   <section class="github-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">Open Source</div>
         <h2 class="section-title">GitHub <span class="gradient-text">Contributions</span></h2>
         <p class="section-desc">Active open source contributor with libraries used by thousands of data scientists worldwide.</p>
       </div>
-      <div class="github-grid" data-aos="fade-up">
+      <div class="github-grid" data-reveal="up" data-stagger="0.1">
         <div class="github-stat">
           <i class="fas fa-code-branch"></i>
-          <span class="github-stat-val">127</span>
+          <span class="github-stat-val" data-count="127">127</span>
           <div class="github-stat-label">Repositories</div>
         </div>
         <div class="github-stat">
           <i class="fas fa-star"></i>
-          <span class="github-stat-val">14K+</span>
+          <span class="github-stat-val" data-count="14" data-suffix="K+">14K+</span>
           <div class="github-stat-label">GitHub Stars</div>
         </div>
         <div class="github-stat">
           <i class="fas fa-users"></i>
-          <span class="github-stat-val">8.2K</span>
+          <span class="github-stat-val" data-count="8.2" data-decimals="1" data-suffix="K">8.2K</span>
           <div class="github-stat-label">Followers</div>
         </div>
         <div class="github-stat">
           <i class="fas fa-box-open"></i>
-          <span class="github-stat-val">23</span>
+          <span class="github-stat-val" data-count="23">23</span>
           <div class="github-stat-label">npm / PyPI Packages</div>
         </div>
       </div>
@@ -281,12 +185,12 @@
   <!-- PUBLICATIONS -->
   <section class="pubs-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">Research</div>
         <h2 class="section-title">Selected <span class="gradient-text">Publications</span></h2>
         <p class="section-desc">Peer-reviewed research published at top ML and AI conferences.</p>
       </div>
-      <div class="pub-card" data-aos="fade-up">
+      <div class="pub-card" data-reveal="up">
         <div class="pub-num">01</div>
         <div class="pub-info">
           <h4>Scalable Bayesian Inference for High-Dimensional Time-Series Forecasting</h4>
@@ -298,7 +202,7 @@
           </div>
         </div>
       </div>
-      <div class="pub-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="pub-card" data-reveal="up">
         <div class="pub-num">02</div>
         <div class="pub-info">
           <h4>Causally-Aware Recommendation Systems for E-Commerce</h4>
@@ -310,7 +214,7 @@
           </div>
         </div>
       </div>
-      <div class="pub-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="pub-card" data-reveal="up">
         <div class="pub-num">03</div>
         <div class="pub-info">
           <h4>Efficient Transformers for Clinical NLP: A Healthcare Case Study</h4>
@@ -325,7 +229,12 @@
     </div>
   </section>
 
+  <!-- CTA SECTION (reused from index) -->
+  <section class="js-cta-section" data-section="cta" aria-label="Call to action"></section>
+
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -334,13 +243,7 @@
           <span class="logo-text">Alex<span class="accent">Morgan</span></span>
         </a>
         <p>Senior Data Scientist | AI &amp; ML Expert | San Francisco, CA</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-        </div>
+        <div class="social-links" data-section="socials" data-role="socials"></div>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -353,17 +256,17 @@
         </div>
         <div class="footer-col">
           <h4>Services</h4>
-          <a href="#">Machine Learning</a>
-          <a href="#">Data Engineering</a>
-          <a href="#">AI Consulting</a>
-          <a href="#">MLOps</a>
-          <a href="#">Workshops</a>
+          <a href="skills.html">Machine Learning</a>
+          <a href="skills.html">Data Engineering</a>
+          <a href="contact.html">AI Consulting</a>
+          <a href="skills.html">MLOps</a>
+          <a href="contact.html">Workshops</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:alex@alexmorgan.ai"><i class="fas fa-envelope"></i> alex@alexmorgan.ai</a>
           <a href="tel:+14155551234"><i class="fas fa-phone"></i> +1 (415) 555-1234</a>
-          <a href="#"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
+          <a href="contact.html"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
         </div>
       </div>
     </div>
@@ -375,35 +278,8 @@
 
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Project Filter
-    (function () {
-      const btns = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.project-full-card');
-      btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          btns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.dataset.filter;
-          cards.forEach(card => {
-            const cat = card.dataset.category;
-            const show = filter === 'all' || cat === filter;
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-              card.classList.toggle('hide', !show);
-              if (show) {
-                requestAnimationFrame(() => {
-                  card.style.opacity = '1';
-                  card.style.transform = 'scale(1)';
-                  card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                });
-              }
-            }, 200);
-          });
-        });
-      });
-    })();
-  </script>
+
+  <div id="page-transition" aria-hidden="true"></div>
+  <script src="assets/js/page-transition.js"></script>
 </body>
 </html>

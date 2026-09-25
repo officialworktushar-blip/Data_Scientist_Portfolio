@@ -55,41 +55,7 @@
   });
 })();
 
-/* ---- GSAP Hero Animation (if GSAP loaded) ---- */
-(function initHeroGSAP() {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Parallax on scroll for hero elements
-  gsap.to('.hero-title', {
-    scrollTrigger: { trigger: '.hero', scrub: 1 },
-    y: -60, opacity: 0.3
-  });
-  gsap.to('.hero-visual', {
-    scrollTrigger: { trigger: '.hero', scrub: 0.8 },
-    y: -80
-  });
-
-  // Stats reveal
-  gsap.from('.stat-card', {
-    scrollTrigger: { trigger: '.stats-section', start: 'top 80%' },
-    y: 40,
-    opacity: 0,
-    stagger: 0.12,
-    duration: 0.8,
-    ease: 'power2.out'
-  });
-
-  // Expertise cards stagger
-  gsap.from('.expertise-card', {
-    scrollTrigger: { trigger: '.expertise-section', start: 'top 75%' },
-    y: 50,
-    opacity: 0,
-    stagger: 0.1,
-    duration: 0.7,
-    ease: 'power2.out'
-  });
-})();
+/* ---- GSAP Hero Parallax handled by assets/js/motion.js ---- */
 
 /* ---- Typing Effect on Hero ---- */
 (function initTyping() {

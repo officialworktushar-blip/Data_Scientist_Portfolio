@@ -4,19 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Dr. Alex Morgan — Data Scientist</title>
+  <meta name="description" content="Work with Dr. Alex Morgan on data science, ML and AI consulting. Share your project scope and budget range to get a response within 48 hours." />
+  <link rel="canonical" href="https://alexmorgan.ai/contact.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#05070F" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dr. Alex Morgan — Data Scientist" />
+  <meta property="og:title" content="Contact | Dr. Alex Morgan" />
+  <meta property="og:description" content="Share your project scope and budget range for a data science, ML or AI consulting engagement." />
+  <meta property="og:url" content="https://alexmorgan.ai/contact.html" />
+  <meta property="og:image" content="https://alexmorgan.ai/assets/og-cover.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | Dr. Alex Morgan" />
+  <meta name="twitter:description" content="Share your project scope and budget range for a data science, ML or AI consulting engagement." />
+  <meta name="twitter:image" content="https://alexmorgan.ai/assets/og-cover.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        d.classList.add('reduce-motion');
+      }
+      setTimeout(function () {
+        d.classList.add('reveal-all');
+
+      }, 2000);
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="assets/css/motion.css" />
+  <link rel="stylesheet" href="assets/css/sections.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" as="style" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" /></noscript>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script defer src="assets/js/content.js"></script>
+  <script defer src="assets/js/sections.js"></script>
+  <script defer src="assets/js/motion.js"></script>
 </head>
 <body>
-  <canvas id="particle-canvas"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <div class="cursor-outer"></div>
   <div class="cursor-inner"></div>
 
   <!-- NAV -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Primary">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
         <span class="logo-icon">AM</span>
@@ -36,160 +82,42 @@
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-content">
-      <div class="section-badge" data-aos="fade-up">Get In Touch</div>
-      <h1 data-aos="fade-up" data-aos-delay="100">Let's Build Something <span class="gradient-text">Extraordinary</span></h1>
-      <p data-aos="fade-up" data-aos-delay="200">Have a data challenge or exciting opportunity? I'd love to hear about it — I typically respond within 24 hours.</p>
+      <div class="section-badge" data-reveal="up">Get In Touch</div>
+      <h1 data-split>Let's Build Something <span class="gradient-text">Extraordinary</span></h1>
+      <p data-reveal="up">Have a data challenge or exciting opportunity? I'd love to hear about it — I typically respond within 24 hours.</p>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-page">
-    <div class="section-container">
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div data-aos="fade-right">
-          <h2>Ready to Collaborate?</h2>
-          <p>Whether you need a fractional data science leader, a project-based consultant, or are looking to hire a full-time Principal Data Scientist, let's connect and explore how I can add value to your organization.</p>
-
-          <div class="contact-cards">
-            <a href="mailto:alex@alexmorgan.ai" class="contact-card">
-              <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
-              <div class="contact-card-text">
-                <strong>Email Me</strong>
-                <span>alex@alexmorgan.ai</span>
-              </div>
-            </a>
-            <a href="tel:+14155551234" class="contact-card">
-              <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
-              <div class="contact-card-text">
-                <strong>Call or Text</strong>
-                <span>+1 (415) 555-1234</span>
-              </div>
-            </a>
-            <a href="#" class="contact-card">
-              <div class="contact-card-icon"><i class="fab fa-linkedin-in"></i></div>
-              <div class="contact-card-text">
-                <strong>LinkedIn</strong>
-                <span>linkedin.com/in/alexmorgan-ds</span>
-              </div>
-            </a>
-            <a href="#" class="contact-card">
-              <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div class="contact-card-text">
-                <strong>Based In</strong>
-                <span>San Francisco, CA (Open to Remote)</span>
-              </div>
-            </a>
-            <a href="#" class="contact-card">
-              <div class="contact-card-icon"><i class="fab fa-calendly" style="font-style:normal;font-weight:700;font-family:var(--font-display);font-size:14px">CAL</div>
-              <div class="contact-card-text">
-                <strong>Schedule a Call</strong>
-                <span>calendly.com/alexmorgan-ds</span>
-              </div>
-            </a>
-          </div>
-
-          <!-- Social links -->
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-            <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div data-aos="fade-left">
-          <div class="contact-form-wrap">
-            <div class="form-title">Send Me a Message</div>
-            <form id="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fname">First Name *</label>
-                  <input type="text" id="fname" placeholder="John" required />
-                </div>
-                <div class="form-group">
-                  <label for="lname">Last Name *</label>
-                  <input type="text" id="lname" placeholder="Smith" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" placeholder="john@company.com" required />
-              </div>
-              <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" placeholder="Your company name" />
-              </div>
-              <div class="form-group">
-                <label for="project-type">Type of Engagement *</label>
-                <select id="project-type" required>
-                  <option value="">Select an option...</option>
-                  <option>ML / AI Project Consulting</option>
-                  <option>Data Strategy & Roadmap</option>
-                  <option>MLOps & Platform Build</option>
-                  <option>Team Training / Workshop</option>
-                  <option>Full-Time Opportunity</option>
-                  <option>Speaking / Conference</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="budget">Estimated Budget (USD)</label>
-                <select id="budget">
-                  <option value="">Prefer not to say</option>
-                  <option>&lt; $10,000</option>
-                  <option>$10,000 – $50,000</option>
-                  <option>$50,000 – $150,000</option>
-                  <option>$150,000 – $500,000</option>
-                  <option>$500,000+</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="message">Tell Me About Your Project *</label>
-                <textarea id="message" placeholder="Describe your data challenge, goals, timeline, and any relevant context..." required></textarea>
-              </div>
-              <button type="submit" class="btn-primary form-submit">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-            </form>
-            <div class="form-success" id="form-success">
-              <i class="fas fa-check-circle"></i>
-              <h3>Message Sent!</h3>
-              <p>Thanks for reaching out. I'll review your message and get back to you within 24 hours.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- CONTACT (config-driven details + validated form) -->
+  <section class="jsf-contact-section" data-section="contact" aria-label="Contact details and message form"></section>
 
   <!-- AVAILABILITY -->
   <section class="availability-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">Availability</div>
         <h2 class="section-title">How I Can <span class="gradient-text">Help You</span></h2>
         <p class="section-desc">Currently accepting select new projects and opportunities in 2026.</p>
       </div>
       <div class="availability-grid">
-        <div class="avail-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="avail-card" data-reveal="up">
           <span class="avail-icon"><i class="fas fa-laptop-code"></i></span>
           <h3>Project Consulting</h3>
           <p>End-to-end data science project delivery. From scoping and architecture to model deployment and handoff. Available for 3–12 month engagements.</p>
           <div class="avail-status"><span class="avail-dot"></span> Open to Projects</div>
         </div>
-        <div class="avail-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="avail-card" data-reveal="up">
           <span class="avail-icon"><i class="fas fa-users-cog"></i></span>
           <h3>Fractional CDO / DS Lead</h3>
           <p>Part-time embedded data science leadership for startups and growth-stage companies that need senior expertise without a full-time hire.</p>
           <div class="avail-status"><span class="avail-dot"></span> 1 Slot Available</div>
         </div>
-        <div class="avail-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="avail-card" data-reveal="up">
           <span class="avail-icon"><i class="fas fa-briefcase"></i></span>
           <h3>Full-Time Opportunities</h3>
           <p>Open to exceptional Principal / Staff Data Scientist or Head of AI/ML roles at mission-driven companies in the USA (remote or SF Bay Area).</p>
@@ -202,12 +130,12 @@
   <!-- FAQ -->
   <section class="faq-section">
     <div class="section-container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="section-header" data-reveal="up">
         <div class="section-badge">FAQ</div>
         <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
         <p class="section-desc">Answers to the most common questions I receive from potential clients and employers.</p>
       </div>
-      <div class="faq-list" data-aos="fade-up">
+      <div class="faq-list" data-reveal="up">
         <div class="faq-item">
           <button class="faq-question">
             What industries have you worked in?
@@ -278,7 +206,12 @@
     </div>
   </section>
 
+  <!-- CTA SECTION (reused from index) -->
+  <section class="js-cta-section" data-section="cta" aria-label="Call to action"></section>
+
   <!-- FOOTER -->
+  </main>
+
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -287,13 +220,7 @@
           <span class="logo-text">Alex<span class="accent">Morgan</span></span>
         </a>
         <p>Senior Data Scientist | AI &amp; ML Expert | San Francisco, CA</p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" class="social-link" aria-label="Kaggle"><i class="fas fa-chart-bar"></i></a>
-          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-        </div>
+        <div class="social-links" data-section="socials" data-role="socials"></div>
       </div>
       <div class="footer-links">
         <div class="footer-col">
@@ -306,17 +233,17 @@
         </div>
         <div class="footer-col">
           <h4>Services</h4>
-          <a href="#">Machine Learning</a>
-          <a href="#">Data Engineering</a>
-          <a href="#">AI Consulting</a>
-          <a href="#">MLOps</a>
-          <a href="#">Workshops</a>
+          <a href="skills.html">Machine Learning</a>
+          <a href="skills.html">Data Engineering</a>
+          <a href="contact.html">AI Consulting</a>
+          <a href="skills.html">MLOps</a>
+          <a href="contact.html">Workshops</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:alex@alexmorgan.ai"><i class="fas fa-envelope"></i> alex@alexmorgan.ai</a>
           <a href="tel:+14155551234"><i class="fas fa-phone"></i> +1 (415) 555-1234</a>
-          <a href="#"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
+          <a href="contact.html"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</a>
         </div>
       </div>
     </div>
@@ -329,19 +256,7 @@
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>
   <script>
-    // Contact Form
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = this.querySelector('.form-submit');
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      btn.disabled = true;
-      setTimeout(() => {
-        this.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-      }, 1800);
-    });
-
-    // FAQ Accordion
+    // FAQ Accordion (static contact FAQ)
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -351,5 +266,8 @@
       });
     });
   </script>
+
+  <div id="page-transition" aria-hidden="true"></div>
+  <script src="assets/js/page-transition.js"></script>
 </body>
 </html>

@@ -1,0 +1,331 @@
+/* ==========================================================================
+   ABOUT SPOTLIGHT — the ONE neon "About / Trusted By" feature card (index.html)
+   --------------------------------------------------------------------------
+   A single stand-out card between Career Journey and Core Expertise:
+   - Glowing neon border in the theme accent: soft blur outer glow that
+     "breathes" (5.5s opacity loop) + a crisp inner 1px accent line.
+     (Accent is var(--accent), #0099FF — glow rgba values track that hue.)
+   - Pill tab group (Overview | Experience | Certifications) that swaps the
+     middle content with a smooth crossfade + slide.
+   - Bold headline + supporting line, a "Trusted by" avatar row (placeholder
+     initials, // TODO: real photos), and cert chips (// TODO: real logos).
+   - Hover on the whole card stops the breathe and brightens the glow.
+   - prefers-reduced-motion: static glow, no pulse.
+   Used sparingly — this is the only such card on the site.
+   ========================================================================== */
+
+.js-spot-section {
+  padding: 48px 0 56px;
+  background: var(--bg, #000000);
+}
+
+.spot-card {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 32px 24px;
+  border-radius: 24px;
+  background: #050505; /* near-black so the neon line reads crisp */
+  border: 1px solid var(--accent, #0099FF);
+  overflow: visible;
+}
+
+/* Soft blur glow that breathes (4-6s loop). rgba = accent hue. */
+.spot-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow:
+    0 0 18px rgba(0, 153, 255, 0.38),
+    0 0 46px rgba(0, 153, 255, 0.16),
+    inset 0 0 14px rgba(0, 153, 255, 0.10);
+  opacity: 0.55;
+  animation: spot-breathe 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Crisp 1px inner accent line drawn on top of the soft glow. */
+.spot-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--accent, #0099FF);
+  pointer-events: none;
+}
+
+@keyframes spot-breathe {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.95; }
+}
+
+.spot-card:hover {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+.spot-card:hover::before {
+  animation: none;
+  opacity: 1;
+  box-shadow:
+    0 0 28px rgba(0, 153, 255, 0.6),
+    0 0 80px rgba(0, 153, 255, 0.3),
+    inset 0 0 22px rgba(0, 153, 255, 0.2);
+}
+.spot-card:hover::after {
+  border-color: var(--accent-400, #00CCFF);
+}
+
+.spot-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------ tab pills ------------------------------ */
+.spot-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+}
+.spot-tab {
+  padding: 7px 15px;
+  border: 0;
+  border-radius: 99px;
+  background: transparent;
+  color: var(--text-secondary, #999999);
+  font-family: var(--font-main, 'Inter', sans-serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+.spot-tab:hover { color: var(--text, #ffffff); }
+.spot-tab.is-active {
+  background: var(--accent, #0099FF);
+  color: #000000;
+}
+
+/* --------------------------- headline + lede --------------------------- */
+.spot-headline {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text, #ffffff);
+  margin: 20px 0 12px;
+  max-width: 24ch;
+}
+.spot-headline .hl-accent { color: var(--accent, #0099FF); }
+
+.spot-lede {
+  margin: 0;
+  color: var(--text-secondary, #999999);
+  font-size: 16.5px;
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+/* ----------------------- switchable content panes ---------------------- */
+.spot-panes {
+  display: grid;
+  margin-top: 22px;
+}
+.spot-pane {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+}
+.spot-pane.is-active {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.spot-prose {
+  margin: 0 0 14px;
+  color: var(--text-secondary, #999999);
+  font-size: 15.5px;
+  line-height: 1.65;
+  max-width: 66ch;
+}
+
+.spot-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spot-chip {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--accent, #0099FF);
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: rgba(0, 153, 255, 0.06);
+}
+
+.spot-exp {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spot-exp li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.spot-exp li::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--accent, #0099FF);
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.6);
+}
+.spot-exp p {
+  margin: 0;
+  color: var(--text-secondary, #999999);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 72ch;
+}
+.spot-exp strong {
+  color: var(--text, #ffffff);
+  font-weight: 600;
+}
+
+.spot-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.spot-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px 10px 10px;
+  border-radius: 12px;
+  background: var(--surface-1, #111111);
+  border: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+}
+.spot-cert-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent, #0099FF);
+  background: rgba(0, 153, 255, 0.1);
+  border: 1px solid rgba(0, 153, 255, 0.35);
+}
+.spot-cert-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text, #ffffff);
+}
+
+/* --------------------------- trusted-by row ---------------------------- */
+.spot-people {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+}
+.spot-people-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-secondary, #999999);
+}
+.spot-avs {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.spot-av {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+}
+.spot-av-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text, #ffffff);
+  background: linear-gradient(135deg, #191919, #0d0d0d);
+  border: 1px solid var(--border-strong, rgba(255,255,255,0.14));
+  box-shadow: 0 0 0 1px rgba(0, 153, 255, 0.25);
+}
+.spot-av figcaption {
+  display: flex;
+  flex-direction: column;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text, #ffffff);
+  line-height: 1.25;
+}
+.spot-av figcaption span {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-secondary, #999999);
+}
+
+/* ================================= mobile ============================== */
+@media (max-width: 900px) {
+  .js-spot-section { padding: 40px 0 44px; }
+  .spot-card { padding: 22px 20px 20px; border-radius: 20px; }
+  .spot-headline { font-size: clamp(24px, 6.5vw, 32px); }
+  .spot-lede { font-size: 15px; }
+  .spot-tabs { width: 100%; }
+  .spot-tab { flex: 1 1 0; text-align: center; padding: 8px 6px; font-size: 12px; }
+  .spot-people { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .spot-av { gap: 7px; }
+}
+
+/* =========================== reduced motion ============================ */
+@media (prefers-reduced-motion: reduce) {
+  .spot-card::before { animation: none; opacity: 0.6; }
+  .spot-card:hover::before { animation: none; opacity: 1; }
+  .spot-pane { transition: opacity 0.2s ease, visibility 0s linear 0.2s; }
+  .spot-pane.is-active { transition: opacity 0.2s ease; }
+}
+html.reduce-motion .spot-card::before { animation: none; opacity: 0.6; }
+html.reduce-motion .spot-card:hover::before { animation: none; opacity: 1; }
+html.reduce-motion .spot-pane { transition: opacity 0.2s ease, visibility 0s linear 0.2s; }
+html.reduce-motion .spot-pane.is-active { transition: opacity 0.2s ease; }

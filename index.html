@@ -36,6 +36,9 @@
   </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/industries.css" />
+  <link rel="stylesheet" href="css/about-spot.css" />
   <link rel="stylesheet" href="assets/css/motion.css" />
   <link rel="stylesheet" href="assets/css/sections.css" />
   <link rel="stylesheet" href="css/theme.css" />
@@ -59,6 +62,9 @@
   <script defer src="assets/js/motion.js"></script>
   <script defer src="assets/js/expertise.js"></script>
   <script defer src="assets/js/hero.js"></script>
+  <script defer src="assets/js/gallery.js"></script>
+  <script defer src="assets/js/industries.js"></script>
+  <script defer src="assets/js/spot.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -255,6 +261,63 @@
   <div class="section-container"><div class="section-header" data-reveal="up" style=""><div class="section-badge">Career Journey</div><h2 class="section-title">15 Years, Applied</h2><p class="section-desc">From BI dashboards to production GenAI — the same arc: business problem in, shipped system out.</p></div><div class="js-timeline" role="list"><div class="js-timeline-rail" aria-hidden="true"><div class="js-timeline-fill"></div></div><div class="js-timeline-stage"><article class="js-era" role="listitem"><div class="js-era-left"><span class="js-era-year">2011</span><span class="js-era-role">Analytics and BI</span></div><div class="js-era-dot" aria-hidden="true"></div><div class="js-era-right"><span class="js-era-kicker">What I built</span><p class="js-era-built">Reporting stacks and self-serve dashboards for finance and ops teams.</p><span class="js-era-kicker">Impact</span><p class="js-era-impact">Cut monthly close reporting from days to minutes.</p><div class="js-era-metric"><span class="js-era-metric-val">500+ dashboards shipped</span><span class="js-era-metric-label">Dashboards shipped</span></div></div></article><article class="js-era" role="listitem"><div class="js-era-left"><span class="js-era-year">2014</span><span class="js-era-role">Classical ML and Big Data</span></div><div class="js-era-dot" aria-hidden="true"></div><div class="js-era-right"><span class="js-era-kicker">What I built</span><p class="js-era-built">Churn, fraud and demand models on Spark and cloud warehouses.</p><span class="js-era-kicker">Impact</span><p class="js-era-impact">First model to hit 94% AUC and stay in production for years.</p><div class="js-era-metric"><span class="js-era-metric-val">40 TB/day processed</span><span class="js-era-metric-label">Data processed</span></div></div></article><article class="js-era" role="listitem"><div class="js-era-left"><span class="js-era-year">2017</span><span class="js-era-role">Deep Learning</span></div><div class="js-era-dot" aria-hidden="true"></div><div class="js-era-right"><span class="js-era-kicker">What I built</span><p class="js-era-built">Sequence and vision models for recommendations and NLP pipelines.</p><span class="js-era-kicker">Impact</span><p class="js-era-impact">CTR moved by triple digits for a Fortune 500 retailer.</p><div class="js-era-metric"><span class="js-era-metric-val">3 neural nets in prod</span><span class="js-era-metric-label">Neural nets shipped</span></div></div></article><article class="js-era" role="listitem"><div class="js-era-left"><span class="js-era-year">2020</span><span class="js-era-role">MLOps at scale</span></div><div class="js-era-dot" aria-hidden="true"></div><div class="js-era-right"><span class="js-era-kicker">What I built</span><p class="js-era-built">Training pipelines, feature stores, drift monitoring, auto-retrain.</p><span class="js-era-kicker">Impact</span><p class="js-era-impact">Deployments went from quarterly to weekly.</p><div class="js-era-metric"><span class="js-era-metric-val">1.2B predictions/mo</span><span class="js-era-metric-label">Predictions / month</span></div></div></article><article class="js-era" role="listitem"><div class="js-era-left"><span class="js-era-year">2023 - now</span><span class="js-era-role">GenAI, LLMs, causal AI</span></div><div class="js-era-dot" aria-hidden="true"></div><div class="js-era-right"><span class="js-era-kicker">What I built</span><p class="js-era-built">RAG assistants, LLM evaluation harnesses, causal uplift scoring.</p><span class="js-era-kicker">Impact</span><p class="js-era-impact">Support and research teams answer in minutes, not days.</p><div class="js-era-metric"><span class="js-era-metric-val">6 GenAI systems live</span><span class="js-era-metric-label">GenAI systems in prod</span></div></div></article></div></div></div>
 </section>
 
+  <!-- ABOUT SPOTLIGHT (the ONE neon accent card — bridge between Career Journey and Core Expertise) -->
+  <section class="js-spot-section" id="about" aria-label="About and trusted by">
+    <div class="section-container">
+      <div class="spot-card" data-reveal="up">
+        <div class="spot-body">
+          <div class="spot-tabs" role="tablist" aria-label="About sections">
+            <button class="spot-tab is-active" id="spot-tab-overview" type="button" role="tab" aria-selected="true" aria-controls="spot-pane-overview" data-spot-tab="overview">Overview</button>
+            <button class="spot-tab" id="spot-tab-experience" type="button" role="tab" aria-selected="false" aria-controls="spot-pane-experience" data-spot-tab="experience">Experience</button>
+            <button class="spot-tab" id="spot-tab-certs" type="button" role="tab" aria-selected="false" aria-controls="spot-pane-certs" data-spot-tab="certs">Certifications</button>
+          </div>
+
+          <h3 class="spot-headline">I build the models that make <span class="hl-accent">data decisions simple.</span></h3>
+          <p class="spot-lede">Fifteen years between the business question and the shipped system — model, metric, and the story that proves both.</p>
+
+          <div class="spot-panes">
+            <div class="spot-pane is-active" id="spot-pane-overview" role="tabpanel" aria-labelledby="spot-tab-overview" data-spot-pane="overview">
+              <p class="spot-prose">The best model is the one nobody has to explain. I frame the decision worth automating, wire the data to it, ship the pipeline, and hold every release to the number it promised — so your team stops guessing and starts deciding.</p>
+              <ul class="spot-chips">
+                <li class="spot-chip">94% AUC in prod</li>
+                <li class="spot-chip">500+ dashboards<br>shipped</li>
+                <li class="spot-chip">1.2B predictions/mo</li>
+                <li class="spot-chip">6 GenAI systems live</li>
+              </ul>
+            </div>
+            <div class="spot-pane" id="spot-pane-experience" role="tabpanel" aria-labelledby="spot-tab-experience" data-spot-pane="experience" aria-hidden="true">
+              <ul class="spot-exp">
+                <li><p><strong>Principal data scientist</strong> — production ML across healthcare, fintech, e-commerce, retail and supply chain since 2011.</p></li>
+                <li><p><strong>MLOps lead</strong> — feature stores, drift monitoring and auto-retrain that moved deployments from quarterly to weekly.</p></li>
+                <li><p><strong>GenAI builder</strong> — six systems live: RAG assistants, LLM evaluation harnesses and causal uplift scoring.</p></li>
+              </ul>
+            </div>
+            <div class="spot-pane" id="spot-pane-certs" role="tabpanel" aria-labelledby="spot-tab-certs" data-spot-pane="certs" aria-hidden="true">
+              <!-- // TODO: replace placeholder initials with real certification logos -->
+              <ul class="spot-certs">
+                <li class="spot-cert"><span class="spot-cert-logo">AWS</span><span class="spot-cert-name">Solutions Architect</span></li>
+                <li class="spot-cert"><span class="spot-cert-logo">DBX</span><span class="spot-cert-name">ML Professional</span></li>
+                <li class="spot-cert"><span class="spot-cert-logo">GCP</span><span class="spot-cert-name">Professional ML Engineer</span></li>
+                <li class="spot-cert"><span class="spot-cert-logo">KG</span><span class="spot-cert-name">Kaggle Grandmaster</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- // TODO: replace placeholder initials with real collaborator / team photos -->
+          <div class="spot-people">
+            <p class="spot-people-label">Trusted by the teams behind</p>
+            <div class="spot-avs">
+              <figure class="spot-av"><span class="spot-av-img">JM</span><figcaption>James M.<span>VP Analytics, Goldman Sachs</span></figcaption></figure>
+              <figure class="spot-av"><span class="spot-av-img">SK</span><figcaption>Sarah K.<span>CTO, FinanceForward</span></figcaption></figure>
+              <figure class="spot-av"><span class="spot-av-img">RP</span><figcaption>Rachel P.<span>Head of Product, TechScale</span></figcaption></figure>
+              <figure class="spot-av"><span class="spot-av-img">CM</span><figcaption>Chris M.<span>CIO, HealthFirst</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW I WORK -->
   <section class="js-process-section" data-section="process" aria-label="How I work">
   <div class="section-container"><div class="section-header" data-reveal="up" style=""><div class="section-badge">How I Work</div><h2 class="section-title">From Question to Shipped System</h2><p class="section-desc">Five steps I run on every engagement — no black boxes, no science projects.</p></div><div class="js-process"><div class="js-process-rail" aria-hidden="true"><div class="js-process-fill"></div></div><ol class="js-process-steps"><li class="js-process-step" data-reveal="up" style=""><span class="js-step-num">01</span><div class="js-step-body"><h3>Frame the problem</h3><p>Agree the decision, the metric that moves it, and what "done" looks like.</p></div></li><li class="js-process-step" data-reveal="up" style=""><span class="js-step-num">02</span><div class="js-step-body"><h3>Data audit</h3><p>Profile sources, leakage risks and gaps before a single model is trained.</p></div></li><li class="js-process-step" data-reveal="up" style=""><span class="js-step-num">03</span><div class="js-step-body"><h3>Model and experiment</h3><p>Strong baselines first, then complexity only where it earns its keep.</p></div></li><li class="js-process-step" data-reveal="up" style=""><span class="js-step-num">04</span><div class="js-step-body"><h3>Ship to production</h3><p>Versioned pipelines, CI, monitoring and rollback — not a notebook in a zip.</p></div></li><li class="js-process-step" data-reveal="up" style=""><span class="js-step-num">05</span><div class="js-step-body"><h3>Monitor and iterate</h3><p>Drift alerts, retraining triggers and a written handover your team owns.</p></div></li></ol></div></div>
@@ -321,6 +384,21 @@
     </div>
   </section>
 
+  <!-- HERO GALLERY (photo pile, rendered by assets/js/gallery.js) -->
+  <section class="js-gallery-section" id="gallery" aria-label="Featured project gallery">
+    <div class="section-container">
+      <div class="section-header" data-reveal="up">
+        <div class="section-badge">Featured Work</div>
+        <h2 class="section-title">Systems I've Shipped</h2>
+        <p class="section-desc">A scattered pile of the projects I can walk you through end to end — hover to peek, click to open the full case study.</p>
+      </div>
+      <div class="gallery-stage" id="gallery-stage"></div>
+      <noscript>
+        <p class="section-desc">Browse the full case studies on the <a href="projects.html">projects page</a>.</p>
+      </noscript>
+    </div>
+  </section>
+
   <!-- FEATURED PROJECTS (sticky stacking cards, rendered from content.js) -->
   <section class="js-stack-section" id="featured" data-section="stack" aria-label="Featured projects">
   <div class="section-container"><div class="section-header" data-reveal="up" style=""><div class="section-badge">Portfolio</div><h2 class="section-title">Featured Projects</h2><p class="section-desc">Six systems I can walk you through end to end — problem, approach, result.</p></div><div class="js-stack"><article class="js-stack-card" data-project="p1"><div class="js-stack-top"><span class="js-stack-cat"><i class="fas fa-heartbeat" aria-hidden="true"></i> Healthcare AI</span><h3>Patient Risk Prediction Engine</h3><p class="js-stack-problem"><strong>Problem.</strong> A top US hospital network was readmitting high-risk patients it could not identify ahead of discharge.</p></div><div class="js-stack-grid"><div class="js-stack-block"><h4>Approach</h4><p>Gradient-boosted model on EHR features with leakage-safe time windows and clinician-reviewed features.</p></div><div class="js-stack-block"><h4>Result</h4><p>94% AUC in production, saving $8M annually in avoidable readmissions.</p></div></div><div class="js-stack-foot"><div class="js-stack-chart"><svg class="js-chart js-chart-line" viewBox="0 0 160 56" aria-hidden="true"><defs><linearGradient id="ln-p1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9900FF" stop-opacity="0.35"></stop><stop offset="100%" stop-color="#9900FF" stop-opacity="0"></stop></linearGradient></defs><path d="M6,52 L6,52.0 L6.0,52.0 L30.7,43.5 L55.3,36.2 L80.0,30.2 L104.7,22.9 L129.3,18.1 L154.0,12.0 L154.0,52 Z" fill="url(#ln-p1)"></path><path d="M6.0,52.0 L30.7,43.5 L55.3,36.2 L80.0,30.2 L104.7,22.9 L129.3,18.1 L154.0,12.0" fill="none" stroke="#9900FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="154.0" cy="12.0" r="3" fill="#9900FF"></circle></svg><div class="js-stack-metric"><span class="js-metric-val" data-count="94" data-suffix="%">94%</span><span class="js-metric-label">AUC in production</span></div></div><div class="js-stack-chips"><span>Python</span><span>XGBoost</span><span>AWS</span></div></div><a class="js-stack-link" href="projects.html">View case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a></article><article class="js-stack-card" data-project="p2"><div class="js-stack-top"><span class="js-stack-cat"><i class="fas fa-shopping-cart" aria-hidden="true"></i> E-Commerce</span><h3>Real-Time Recommendation System</h3><p class="js-stack-problem"><strong>Problem.</strong> Static "customers also bought" slots were leaving engagement and revenue on the table.</p></div><div class="js-stack-grid"><div class="js-stack-block"><h4>Approach</h4><p>Two-tower deep retrieval with real-time Redis features and a shadow A/B rollout.</p></div><div class="js-stack-block"><h4>Result</h4><p>CTR up 340% and $22M in attributable revenue for a Fortune 500 retailer.</p></div></div><div class="js-stack-foot"><div class="js-stack-chart"><svg class="js-chart js-chart-line" viewBox="0 0 160 56" aria-hidden="true"><defs><linearGradient id="ln-p2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FD7702" stop-opacity="0.35"></stop><stop offset="100%" stop-color="#FD7702" stop-opacity="0"></stop></linearGradient></defs><path d="M6,52 L6,52.0 L6.0,52.0 L30.7,46.7 L55.3,40.3 L80.0,33.7 L104.7,25.7 L129.3,18.7 L154.0,12.0 L154.0,52 Z" fill="url(#ln-p2)"></path><path d="M6.0,52.0 L30.7,46.7 L55.3,40.3 L80.0,33.7 L104.7,25.7 L129.3,18.7 L154.0,12.0" fill="none" stroke="#FD7702" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="154.0" cy="12.0" r="3" fill="#FD7702"></circle></svg><div class="js-stack-metric"><span class="js-metric-val" data-count="340" data-prefix="+" data-suffix="%">+340%</span><span class="js-metric-label">CTR lift</span></div></div><div class="js-stack-chips"><span>PyTorch</span><span>Redis</span><span>GCP</span></div></div><a class="js-stack-link" href="projects.html">View case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a></article><article class="js-stack-card" data-project="p3"><div class="js-stack-top"><span class="js-stack-cat"><i class="fas fa-shield-alt" aria-hidden="true"></i> FinTech</span><h3>Fraud Detection at Scale</h3><p class="js-stack-problem"><strong>Problem.</strong> Rules-based fraud filters were burning customers out while fraud still slipped through.</p></div><div class="js-stack-grid"><div class="js-stack-block"><h4>Approach</h4><p>Streaming feature store + gradient boosting with a sub-100ms online scoring path.</p></div><div class="js-stack-block"><h4>Result</h4><p>99.2% precision across 10M+ transactions per day for a major US bank.</p></div></div><div class="js-stack-foot"><div class="js-stack-chart"><svg class="js-chart js-chart-bars" viewBox="0 0 160 56" aria-hidden="true"><rect x="9.3" y="19.5" width="12.9" height="32.5" rx="1.5" fill="#4CD963" opacity="0.85"></rect><rect x="30.7" y="15.7" width="12.9" height="36.3" rx="1.5" fill="#4CD963" opacity="0.85"></rect><rect x="52.1" y="12.7" width="12.9" height="39.3" rx="1.5" fill="#4CD963" opacity="0.85"></rect><rect x="73.6" y="10.6" width="12.9" height="41.4" rx="1.5" fill="#4CD963" opacity="0.85"></rect><rect x="95.0" y="8.9" width="12.9" height="43.1" rx="1.5" fill="#4CD963" opacity="0.85"></rect><rect x="116.4" y="8.1" width="12.9" height="43.9" rx="1.5" fill="#4CD963" opacity="0.85"></rect><rect x="137.9" y="8.0" width="12.9" height="44.0" rx="1.5" fill="#4CD963" opacity="0.85"></rect></svg><div class="js-stack-metric"><span class="js-metric-val" data-count="99.2" data-decimals="1" data-suffix="%">99.2%</span><span class="js-metric-label">Precision</span></div></div><div class="js-stack-chips"><span>Spark</span><span>Kafka</span><span>TensorFlow</span></div></div><a class="js-stack-link" href="projects.html">View case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a></article><article class="js-stack-card" data-project="p4"><div class="js-stack-top"><span class="js-stack-cat"><i class="fas fa-boxes-stacked" aria-hidden="true"></i> Supply Chain</span><h3>Demand Forecasting Platform</h3><p class="js-stack-problem"><strong>Problem.</strong> Planners were rebuilding forecasts in spreadsheets every week and over-stocking to be safe.</p></div><div class="js-stack-grid"><div class="js-stack-block"><h4>Approach</h4><p>Hierarchical Bayesian forecasting per SKU-store with holiday and promo regressors, refreshed nightly.</p></div><div class="js-stack-block"><h4>Result</h4><p>Forecast error cut sharply and holding cost down 28% in the pilot quarter.</p></div></div><div class="js-stack-foot"><div class="js-stack-chart"><svg class="js-chart js-chart-line" viewBox="0 0 160 56" aria-hidden="true"><defs><linearGradient id="ln-p4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00CCFF" stop-opacity="0.35"></stop><stop offset="100%" stop-color="#00CCFF" stop-opacity="0"></stop></linearGradient></defs><path d="M6,52 L6,12.0 L6.0,12.0 L30.7,18.1 L55.3,26.5 L80.0,35.0 L104.7,42.3 L129.3,47.2 L154.0,52.0 L154.0,52 Z" fill="url(#ln-p4)"></path><path d="M6.0,12.0 L30.7,18.1 L55.3,26.5 L80.0,35.0 L104.7,42.3 L129.3,47.2 L154.0,52.0" fill="none" stroke="#00CCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="154.0" cy="52.0" r="3" fill="#00CCFF"></circle></svg><div class="js-stack-metric"><span class="js-metric-val" data-count="-28" data-suffix="%">-28%</span><span class="js-metric-label">Holding cost</span></div></div><div class="js-stack-chips"><span>Python</span><span>Prophet</span><span>Snowflake</span></div></div><a class="js-stack-link" href="projects.html">View case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a></article><article class="js-stack-card" data-project="p5"><div class="js-stack-top"><span class="js-stack-cat"><i class="fas fa-users" aria-hidden="true"></i> Subscription / Retail</span><h3>Churn &amp; LTV Model Suite</h3><p class="js-stack-problem"><strong>Problem.</strong> Marketing could not tell which at-risk accounts were worth a win-back discount.</p></div><div class="js-stack-grid"><div class="js-stack-block"><h4>Approach</h4><p>Survival models for time-to-churn plus BG/NBD LTV scoring, wired into the CRM as a daily score file.</p></div><div class="js-stack-block"><h4>Result</h4><p>Retention offers now target the top decile, lifting save rate and protecting margin.</p></div></div><div class="js-stack-foot"><div class="js-stack-chart"><svg class="js-chart js-chart-bars" viewBox="0 0 160 56" aria-hidden="true"><rect x="9.3" y="31.6" width="12.9" height="20.4" rx="1.5" fill="#FFBB00" opacity="0.85"></rect><rect x="30.7" y="25.4" width="12.9" height="26.6" rx="1.5" fill="#FFBB00" opacity="0.85"></rect><rect x="52.1" y="20.3" width="12.9" height="31.7" rx="1.5" fill="#FFBB00" opacity="0.85"></rect><rect x="73.6" y="16.2" width="12.9" height="35.8" rx="1.5" fill="#FFBB00" opacity="0.85"></rect><rect x="95.0" y="13.1" width="12.9" height="38.9" rx="1.5" fill="#FFBB00" opacity="0.85"></rect><rect x="116.4" y="10.0" width="12.9" height="42.0" rx="1.5" fill="#FFBB00" opacity="0.85"></rect><rect x="137.9" y="8.0" width="12.9" height="44.0" rx="1.5" fill="#FFBB00" opacity="0.85"></rect></svg><div class="js-stack-metric"><span class="js-metric-val" data-count="41" data-prefix="+" data-suffix="%">+41%</span><span class="js-metric-label">Save rate</span></div></div><div class="js-stack-chips"><span>LightGBM</span><span>dbt</span><span>Airflow</span></div></div><a class="js-stack-link" href="projects.html">View case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a></article><article class="js-stack-card" data-project="p6"><div class="js-stack-top"><span class="js-stack-cat"><i class="fas fa-comments" aria-hidden="true"></i> Enterprise AI</span><h3>LLM Document Intelligence (RAG)</h3><p class="js-stack-problem"><strong>Problem.</strong> Support and research teams spent hours digging through 40k internal PDFs and wikis.</p></div><div class="js-stack-grid"><div class="js-stack-block"><h4>Approach</h4><p>Hybrid retrieval (BM25 + vector) with reranking, citation enforcement and an eval harness per release.</p></div><div class="js-stack-block"><h4>Result</h4><p>First-draft answers in minutes with citations attached — hallucinations tracked and trending down.</p></div></div><div class="js-stack-foot"><div class="js-stack-chart"><svg class="js-chart js-chart-line" viewBox="0 0 160 56" aria-hidden="true"><defs><linearGradient id="ln-p6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0099FF" stop-opacity="0.35"></stop><stop offset="100%" stop-color="#0099FF" stop-opacity="0"></stop></linearGradient></defs><path d="M6,52 L6,52.0 L6.0,52.0 L30.7,43.5 L55.3,35.0 L80.0,29.0 L104.7,21.7 L129.3,15.6 L154.0,12.0 L154.0,52 Z" fill="url(#ln-p6)"></path><path d="M6.0,52.0 L30.7,43.5 L55.3,35.0 L80.0,29.0 L104.7,21.7 L129.3,15.6 L154.0,12.0" fill="none" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="154.0" cy="12.0" r="3" fill="#0099FF"></circle></svg><div class="js-stack-metric"><span class="js-metric-val" data-count="87" data-suffix="%">87%</span><span class="js-metric-label">Answer accuracy</span></div></div><div class="js-stack-chips"><span>LangChain</span><span>pgvector</span><span>Azure OpenAI</span></div></div><a class="js-stack-link" href="projects.html">View case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a></article></div><div class="section-cta" data-reveal="up" style=""><a href="projects.html" class="btn-outline btn-lg">View All 50+ Projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div></div>
@@ -335,6 +413,78 @@
   <section class="js-testi-section" id="testimonials" data-section="testimonials" aria-label="Testimonials">
   <div class="section-container"><div class="section-header" data-reveal="up" style=""><div class="section-badge">Testimonials</div><h2 class="section-title">What Clients Say</h2><p class="section-desc">Trusted by executives and teams across the United States.</p></div><div class="js-testi-rows"><div class="marquee testi-row" data-marquee="" aria-label="Client testimonials"><div class="marquee-track"><div class="marquee-group"><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Alex transformed our data infrastructure and built predictive models that directly contributed to a 40% increase in sales. Truly exceptional work — the best data scientist we have ever worked with."</p><div class="js-testi-author"><div class="author-avatar">JM</div><div class="author-info"><strong>James Morrison</strong><span>VP of Analytics, Goldman Sachs</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Outstanding data scientist who delivered a fraud detection system that saved us over $12M in the first year. Alex’s ability to translate business needs into technical solutions is unmatched."</p><div class="js-testi-author"><div class="author-avatar">SK</div><div class="author-info"><strong>Sarah Kim</strong><span>CTO, FinanceForward Inc.</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"We hired Alex to build an NLP pipeline for customer sentiment analysis. The results exceeded all expectations — 92% accuracy and insights that reshaped our entire product roadmap."</p><div class="js-testi-author"><div class="author-avatar">RP</div><div class="author-info"><strong>Rachel Patel</strong><span>Head of Product, TechScale USA</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Alex’s ML model for supply chain optimization reduced our operational costs by 28%. His communication with non-technical stakeholders is exceptional — rare to find in a data scientist."</p><div class="js-testi-author"><div class="author-avatar">DW</div><div class="author-info"><strong>David Wilson</strong><span>COO, LogiTech Solutions</span></div></div></article></div><div class="marquee-group" aria-hidden="true"><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Alex transformed our data infrastructure and built predictive models that directly contributed to a 40% increase in sales. Truly exceptional work — the best data scientist we have ever worked with."</p><div class="js-testi-author"><div class="author-avatar">JM</div><div class="author-info"><strong>James Morrison</strong><span>VP of Analytics, Goldman Sachs</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Outstanding data scientist who delivered a fraud detection system that saved us over $12M in the first year. Alex’s ability to translate business needs into technical solutions is unmatched."</p><div class="js-testi-author"><div class="author-avatar">SK</div><div class="author-info"><strong>Sarah Kim</strong><span>CTO, FinanceForward Inc.</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"We hired Alex to build an NLP pipeline for customer sentiment analysis. The results exceeded all expectations — 92% accuracy and insights that reshaped our entire product roadmap."</p><div class="js-testi-author"><div class="author-avatar">RP</div><div class="author-info"><strong>Rachel Patel</strong><span>Head of Product, TechScale USA</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Alex’s ML model for supply chain optimization reduced our operational costs by 28%. His communication with non-technical stakeholders is exceptional — rare to find in a data scientist."</p><div class="js-testi-author"><div class="author-avatar">DW</div><div class="author-info"><strong>David Wilson</strong><span>COO, LogiTech Solutions</span></div></div></article></div></div></div><div class="marquee marquee--reverse testi-row" data-marquee="" aria-label="More client testimonials"><div class="marquee-track"><div class="marquee-group"><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"The forecasting platform paid for itself inside one quarter. What impressed me most was the handover — our analysts own it now without calling anyone."</p><div class="js-testi-author"><div class="author-avatar">MT</div><div class="author-info"><strong>Maria Torres</strong><span>SVP Supply Chain, Northline Retail</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Alex took our messy CRM data and turned it into an LTV scoring layer marketing actually trusts. Clear weekly demos, no jargon, real lift."</p><div class="js-testi-author"><div class="author-avatar">BK</div><div class="author-info"><strong>Brian Keller</strong><span>CMO, SubscriptionWorks</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Our RAG assistant went from hallucinating policy answers to citing sources on every reply. The eval harness alone changed how we ship."</p><div class="js-testi-author"><div class="author-avatar">LT</div><div class="author-info"><strong>Lena Tran</strong><span>Director of Support, Helio Health</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Fractional data leadership without the full-time headcount — Alex set our roadmap, hired our first two engineers, and handed it back cleanly."</p><div class="js-testi-author"><div class="author-avatar">GO</div><div class="author-info"><strong>Gerald Okafor</strong><span>Founder, Arcadia Labs</span></div></div></article></div><div class="marquee-group" aria-hidden="true"><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"The forecasting platform paid for itself inside one quarter. What impressed me most was the handover — our analysts own it now without calling anyone."</p><div class="js-testi-author"><div class="author-avatar">MT</div><div class="author-info"><strong>Maria Torres</strong><span>SVP Supply Chain, Northline Retail</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Alex took our messy CRM data and turned it into an LTV scoring layer marketing actually trusts. Clear weekly demos, no jargon, real lift."</p><div class="js-testi-author"><div class="author-avatar">BK</div><div class="author-info"><strong>Brian Keller</strong><span>CMO, SubscriptionWorks</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Our RAG assistant went from hallucinating policy answers to citing sources on every reply. The eval harness alone changed how we ship."</p><div class="js-testi-author"><div class="author-avatar">LT</div><div class="author-info"><strong>Lena Tran</strong><span>Director of Support, Helio Health</span></div></div></article><article class="testi-card"><div class="js-testi-stars" aria-hidden="true">*****</div><p class="js-testi-text">"Fractional data leadership without the full-time headcount — Alex set our roadmap, hired our first two engineers, and handed it back cleanly."</p><div class="js-testi-author"><div class="author-avatar">GO</div><div class="author-info"><strong>Gerald Okafor</strong><span>Founder, Arcadia Labs</span></div></div></article></div></div></div></div></div>
 </section>
+
+  <!-- IMPACT ACROSS INDUSTRIES (horizontal scroll-snap row) -->
+  <section class="js-industries-section" id="industries" aria-label="Impact across industries">
+    <div class="section-container">
+      <div class="section-header" data-reveal="up">
+        <div class="section-badge">Impact</div>
+        <h2 class="section-title">Impact Across Industries</h2>
+        <p class="section-desc">Six sectors, one pattern: find the decision worth automating, ship the model, measure the number.</p>
+      </div>
+      <div class="ig-scroller">
+        <button class="ig-arrow ig-prev" type="button" aria-label="Scroll left"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+        <div class="ig-track" id="ig-track">
+          <a class="ig-card" href="projects.html#p1">
+            <span class="ig-bg" aria-hidden="true"></span>
+            <span class="ig-lockup">
+              <span class="ig-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg></span>
+              <span class="ig-name">Healthcare</span>
+              <span class="ig-industry">Readmission risk</span>
+            </span>
+            <span class="ig-cta">Read case study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="ig-card" href="projects.html#p2">
+            <span class="ig-bg" aria-hidden="true"></span>
+            <span class="ig-lockup">
+              <span class="ig-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.2 12.2a1 1 0 0 1-1 .8H8.2a1 1 0 0 1-1-.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg></span>
+              <span class="ig-name">E-commerce</span>
+              <span class="ig-industry">Real-time recommendations</span>
+            </span>
+            <span class="ig-cta">Read case study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="ig-card" href="projects.html#p3">
+            <span class="ig-bg" aria-hidden="true"></span>
+            <span class="ig-lockup">
+              <span class="ig-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.2c0 4.6-3 7.6-7 9.3-4-1.7-7-4.7-7-9.3V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+              <span class="ig-name">FinTech</span>
+              <span class="ig-industry">Fraud detection at scale</span>
+            </span>
+            <span class="ig-cta">Read case study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="ig-card" href="projects.html#p5">
+            <span class="ig-bg" aria-hidden="true"></span>
+            <span class="ig-lockup">
+              <span class="ig-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l1.4-4h13.2L20 7z"></path><path d="M4 7h16v3H4z"></path><path d="M6 10v9.2h12V10M9 19.2V13h6v6.2"></path></svg></span>
+              <span class="ig-name">Retail</span>
+              <span class="ig-industry">Shelf monitoring vision</span>
+            </span>
+            <span class="ig-cta">Read case study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="ig-card" href="projects.html#p9">
+            <span class="ig-bg" aria-hidden="true"></span>
+            <span class="ig-lockup">
+              <span class="ig-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10"></path></svg></span>
+              <span class="ig-name">Supply Chain</span>
+              <span class="ig-industry">Demand forecasting</span>
+            </span>
+            <span class="ig-cta">Read case study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="ig-card" href="projects.html#p4">
+            <span class="ig-bg" aria-hidden="true"></span>
+            <span class="ig-lockup">
+              <span class="ig-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l1.7 4.3L18 10l-4.3 1.7L12 16l-1.7-4.3L6 10l4.3-1.7z"></path><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"></path></svg></span>
+              <span class="ig-name">GenAI</span>
+              <span class="ig-industry">Enterprise RAG assistant</span>
+            </span>
+            <span class="ig-cta">Read case study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+        <button class="ig-arrow ig-next" type="button" aria-label="Scroll right"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+      <div class="ig-progress" aria-hidden="true"><span class="ig-progress-fill"></span></div>
+    </div>
+  </section>
 
   <!-- ENGAGEMENT MODELS -->
   <section class="js-eng-section" data-section="engagements" aria-label="Engagement models">

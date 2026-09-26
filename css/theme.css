@@ -39,6 +39,7 @@
   --secondary: var(--accent-400);
   --accent-old: var(--accent-300);
   --dark: var(--bg);
+  --bg-primary: var(--bg);
   --dark-2: var(--surface-1);
   --dark-3: var(--surface-2);
   --dark-4: var(--surface-3);

@@ -1,0 +1,261 @@
+/* ==========================================================================
+   HERO GALLERY — "photo pile" of featured project cards (index.html only)
+   --------------------------------------------------------------------------
+   Desktop  (>900px): scattered cards, tilted, z-stacked like a photo pile.
+     - cursor parallax: front cards (higher --depth) translate more
+     - hover: lift + straighten to 0deg + soft accent glow
+   Tablet/Mobile (<=900px): horizontal scroll-snap row, same cards, slight
+     tilt for character, no mouse-parallax.
+   prefers-reduced-motion: static neat grid, no tilt, no parallax, hover
+     glow still allowed (visual states only).
+   Tokens only: near-black background (--bg-primary), #111 surfaces, 1px
+   subtle border, accent reserved for icons/type/glow. Tweak in theme.css.
+   ========================================================================== */
+
+.js-gallery-section {
+  background: var(--bg-primary, #000000);
+  padding: 72px 0 8px;
+}
+
+/* Stage: the pile area. --parx/--pary are written by gallery.js on mouse
+   move; each card multiplies by its own --depth so front cards move more. */
+.gallery-stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: visible;
+  --parx: 0px;
+  --pary: 0px;
+}
+
+/* ---------------------------------- card -------------------------------- */
+.gallery-card {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+  color: var(--text, #fff);
+  border-radius: 18px;
+  background: var(--surface-1, #111111);
+  border: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
+  overflow: visible;
+  will-change: transform;
+  --depth: 1;
+  --tilt: 0deg;
+  --z: 1;
+  z-index: var(--z);
+  transform: translate3d(calc(var(--parx) * var(--depth)), calc(var(--pary) * var(--depth)), 0)
+    rotate(var(--tilt)) scale(1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.gallery-card:hover,
+.gallery-card:focus-visible {
+  transform: translate3d(calc(var(--parx) * var(--depth)), calc(var(--pary) * var(--depth) - 6px), 0)
+    rotate(0deg) scale(1.04);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.62), 0 0 54px rgba(0, 153, 255, 0.35);
+  border-color: var(--border-strong, rgba(255,255,255,0.14));
+}
+
+/* Sizes (mix for the pile) */
+.gl-a { width: 28%; aspect-ratio: 4 / 3; }       /* feature */
+.gl-b { width: 21%; aspect-ratio: 3 / 2; }       /* mid */
+.gl-c { width: 16%; aspect-ratio: 4 / 5; }       /* small tall */
+.gl-d { width: 33%; aspect-ratio: 16 / 10; }     /* wide */
+
+/* Soft accent glow revealed behind the card on hover */
+.gallery-glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 24px;
+  background: radial-gradient(120% 120% at 50% 30%,
+      rgba(0, 153, 255, 0.42), rgba(0, 204, 255, 0.14) 55%, transparent 78%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.gallery-card:hover .gallery-glow,
+.gallery-card:focus-visible .gallery-glow { opacity: 1; }
+
+/* --------------------------------- thumb -------------------------------- */
+.gallery-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--thumb-grad, linear-gradient(135deg, #12121c, #0c0c12));
+  z-index: 1;
+}
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder mock-chart thumbnail (no real screenshot yet) */
+.gallery-mock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10% 12% 11%;
+}
+.gallery-mock-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gallery-mock-top i { color: var(--accent-300, #22DDDD); font-size: 14px; }
+.gallery-mock-pill {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary, #999999);
+  border: 1px solid var(--border-strong, rgba(255,255,255,0.14));
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.gallery-mock-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6%;
+  height: 38%;
+}
+.gallery-bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(to top, var(--accent-600, #0055FF), var(--accent-400, #00CCFF));
+  opacity: 0.72;
+}
+.gallery-mock-caption {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  color: var(--text-secondary, #999999);
+}
+
+/* ------------------------------- overlay -------------------------------- */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.12) 55%, transparent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.gallery-card:hover .gallery-overlay,
+.gallery-card:focus-visible .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.gallery-cat {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-secondary, #999999);
+}
+.gallery-name {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  margin-top: 2px;
+}
+.gallery-metric {
+  margin-top: 7px;
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: var(--accent-300, #22DDDD);
+}
+
+/* ========================== tablet / mobile row ========================== */
+@media (max-width: 900px) {
+  .js-gallery-section { padding-top: 56px; }
+  .gallery-stage {
+    height: auto;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 4px 28px;
+    scrollbar-width: thin;
+  }
+  .gl-a, .gl-b, .gl-c, .gl-d {
+    width: 240px;
+    aspect-ratio: auto;
+    height: 200px;
+  }
+  .gallery-card {
+    position: relative;
+    flex: 0 0 240px;
+    scroll-snap-align: center;
+    transform: rotate(var(--tilt)) scale(1);
+  }
+}
+
+/* ==================== reduced motion: static neat grid =================== */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-stage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    height: auto;
+    overflow: visible;
+    align-items: start;
+  }
+  .gl-a, .gl-b, .gl-c, .gl-d {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+  .gallery-card {
+    position: relative;
+    --tilt: 0deg;
+    transform: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .gallery-card:hover,
+  .gallery-card:focus-visible {
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+/* html.reduce-motion mirrors the media query (inline head script sets it) */
+html.reduce-motion .gallery-stage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  height: auto;
+  overflow: visible;
+  align-items: start;
+}
+html.reduce-motion .gl-a,
+html.reduce-motion .gl-b,
+html.reduce-motion .gl-c,
+html.reduce-motion .gl-d {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+html.reduce-motion .gallery-card {
+  position: relative;
+  --tilt: 0deg;
+  transform: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+html.reduce-motion .gallery-card:hover,
+html.reduce-motion .gallery-card:focus-visible {
+  transform: translateY(-4px) scale(1.03);
+}

@@ -1,0 +1,258 @@
+/* ==========================================================================
+   IMPACT ACROSS INDUSTRIES — full-width horizontal scroll-snap row
+   (index.html, directly after Testimonials)
+   --------------------------------------------------------------------------
+   - Pure black band, large 4:5 portrait cards, ~3.5 visible on desktop so
+     the next card peeks (scroll affordance).
+   - Cards stay mostly black/empty; a subtle accent gradient/data-flow mesh
+     fades in ONLY on hover.
+   - "Read case study →" bottom-left, accent-colored, underline + slide on
+     hover (slides right slightly).
+   - scroll-snap x mandatory, drag-to-scroll, arrow buttons, thin progress
+     bar. Wheel/trackpad friendly (vertical wheel translates to the row).
+   - Tokens only: --bg-primary background, --surface borders, accent family
+     for icon/hairlines/cta/progress. No new palette.
+   ========================================================================== */
+
+.js-industries-section {
+  background: var(--bg-primary, #000000);
+  padding: 72px 0 64px;
+  overflow: hidden;
+}
+
+/* ------------------------------ scroller ------------------------------ */
+.ig-scroller {
+  position: relative;
+}
+.ig-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 0 20px;
+  padding-right: 8%;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation; /* mobile pans + snaps natively */
+}
+.ig-track::-webkit-scrollbar { display: none; }
+.ig-track.dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+}
+/* While dragging, cards can't take the click — prevents accidental link
+   activation on release (flag suppression is a backup) */
+.ig-track.dragging .ig-card { pointer-events: none; }
+
+/* -------------------------------- card -------------------------------- */
+.ig-card {
+  position: relative;
+  flex: 0 0 calc((100% - 72px) / 3.5); /* ~3.5 cards visible on desktop */
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  border: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+  text-decoration: none;
+  color: var(--text, #fff);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.ig-card:hover,
+.ig-card:focus-visible {
+  border-color: var(--border-strong, rgba(255,255,255,0.14));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Subtle hover-only background: accent gradient mesh + faint data-flow
+   hairlines. Hidden at rest, fades/rises in on hover only. */
+.ig-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.ig-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 95% at 18% 8%, var(--ig-glow, rgba(0, 153, 255, 0.5)), transparent 58%),
+    radial-gradient(120% 95% at 82% 96%, var(--ig-glow2, rgba(0, 204, 255, 0.32)), transparent 55%),
+    linear-gradient(135deg, rgba(0, 153, 255, 0.08), rgba(0, 204, 255, 0.04));
+}
+.ig-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(115deg,
+      rgba(0, 153, 255, 0.07) 0px, rgba(0, 153, 255, 0.07) 1px,
+      transparent 1px, transparent 26px),
+    repeating-linear-gradient(25deg,
+      rgba(0, 204, 255, 0.05) 0px, rgba(0, 204, 255, 0.05) 1px,
+      transparent 1px, transparent 26px);
+  opacity: 0.5;
+}
+/* 6 cards, 6 subtle accent mixes (still the same token family) */
+.ig-card:nth-child(2) .ig-bg { --ig-glow: rgba(0, 204, 255, 0.5); --ig-glow2: rgba(0, 153, 255, 0.3); }
+.ig-card:nth-child(3) .ig-bg { --ig-glow: rgba(0, 85, 255, 0.5); --ig-glow2: rgba(0, 153, 255, 0.32); }
+.ig-card:nth-child(4) .ig-bg { --ig-glow: rgba(34, 221, 221, 0.42); --ig-glow2: rgba(0, 153, 255, 0.3); }
+.ig-card:nth-child(5) .ig-bg { --ig-glow: rgba(0, 153, 255, 0.45); --ig-glow2: rgba(0, 85, 255, 0.35); }
+.ig-card:nth-child(6) .ig-bg { --ig-glow: rgba(0, 204, 255, 0.4); --ig-glow2: rgba(34, 221, 221, 0.28); }
+.ig-card:hover .ig-bg,
+.ig-card:focus-visible .ig-bg {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------------------------- icon + wordmark --------------------------- */
+.ig-lockup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex: 1 1 auto;
+  min-height: 0;
+  z-index: 1;
+}
+.ig-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+}
+.ig-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent, #0099FF);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ig-name {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text, #fff);
+}
+.ig-industry {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-secondary, #999999);
+}
+
+/* ------------------------------ CTA link ------------------------------ */
+.ig-cta {
+  position: relative;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent, #0099FF);
+  z-index: 1;
+  padding-bottom: 3px;
+  transition: transform 0.3s ease;
+}
+.ig-cta i { transition: transform 0.3s ease; }
+.ig-cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--accent, #0099FF);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.ig-card:hover .ig-cta,
+.ig-card:focus-visible .ig-cta {
+  transform: translateX(4px);
+  text-decoration: none;
+}
+.ig-card:hover .ig-cta::after,
+.ig-card:focus-visible .ig-cta::after { transform: scaleX(1); }
+.ig-card:hover .ig-cta i,
+.ig-card:focus-visible .ig-cta i { transform: translateX(3px); }
+
+/* ---------------------------- arrow buttons --------------------------- */
+.ig-arrow {
+  position: absolute;
+  top: 44%;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-1, #111111);
+  border: 1px solid var(--border-strong, rgba(255,255,255,0.14));
+  color: var(--text, #fff);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+}
+.ig-arrow:hover:not(:disabled) {
+  background: var(--accent, #0099FF);
+  border-color: var(--accent, #0099FF);
+  color: #000;
+}
+.ig-arrow:disabled { opacity: 0.25; cursor: default; }
+.ig-prev { left: 10px; }
+.ig-next { right: 10px; }
+
+/* ------------------------------- progress ----------------------------- */
+.ig-progress {
+  height: 2px;
+  margin-top: 6px;
+  background: var(--border-subtle, rgba(255,255,255,0.08));
+  border-radius: 99px;
+  overflow: hidden;
+}
+.ig-progress-fill {
+  display: block;
+  height: 100%;
+  width: var(--ig-progress, 8%);
+  min-width: 8%;
+  background: linear-gradient(90deg, var(--accent, #0099FF), var(--accent-400, #00CCFF));
+  border-radius: 99px;
+  transition: width 0.2s ease;
+}
+
+/* ========================== tablet / mobile =========================== */
+@media (max-width: 900px) {
+  .ig-track { gap: 14px; padding-right: 12%; }
+  .ig-card { flex: 0 0 calc((100% - 14px) / 1.35); } /* ~1.35 cards visible */
+  .ig-arrow { display: none; } /* swipe/drag is the affordance on touch */
+  .ig-lockup { gap: 10px; }
+}
+
+/* =========================== reduced motion =========================== */
+@media (prefers-reduced-motion: reduce) {
+  .ig-bg { transition: opacity 0.2s ease; transform: none; }
+  .ig-cta, .ig-cta i, .ig-cta::after { transition-duration: 0.15s; }
+  .ig-track { scroll-behavior: auto; }
+}
+html.reduce-motion .ig-bg { transition: opacity 0.2s ease; transform: none; }
+html.reduce-motion .ig-cta, html.reduce-motion .ig-cta i, html.reduce-motion .ig-cta::after { transition-duration: 0.15s; }

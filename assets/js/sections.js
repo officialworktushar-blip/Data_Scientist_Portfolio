@@ -457,6 +457,20 @@
         if (card && !card.classList.contains('jsf-pf-hide')) { ev.preventDefault(); openModal(card.getAttribute('data-id')); }
       }
     });
+
+    /* Deep links: projects.html#pX (gallery cards & elsewhere) open the
+       matching case-study modal. */
+    var openFromHash = function () {
+      var id = (window.location.hash || '').replace(/^#/, '');
+      if (!/^p\d+$/.test(id)) return;
+      var found = false;
+      for (var ha = 0; ha < p.projects.length; ha++) {
+        if (p.projects[ha].id === id) { found = true; break; }
+      }
+      if (found) openModal(id);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
   }
 
   function pfModalHtml(pr) {

@@ -5,9 +5,8 @@
    - data-split word-by-word headline reveal
    - data-count number count-up (prefix/suffix/decimals, once in view)
    - data-marquee infinite loop (dupes the group, hover pauses)
-   - cursor spotlight on cards (--mx / --my CSS vars)
-   - scroll progress bar + glass nav after 40px
-   - magnetic hover on primary buttons
+   - scroll progress bar (nav itself stays transparent at all scrolls, per
+     the framer.com measurement — no glass, no blur, no border)
    - honors prefers-reduced-motion everywhere
    ========================================================================== */
 (function () {
@@ -255,44 +254,14 @@
 
   /* --------------------------- cursor spotlight ------------------------- */
   function initSpotlight() {
-    if (!finePointer) return;
-    var cards = Array.prototype.slice.call(document.querySelectorAll(
-      '.expertise-card,.stat-card,.project-card,.testimonial-card,.cert-card,' +
-      '.tool-category,.learning-card,.avail-card,.contact-card,.github-stat,' +
-      '.pub-card,.tech-card,.case-study-card,.timeline-content,.glass-card'
-    ));
-    cards.forEach(function (card) {
-      card.classList.add('has-spot');
-      var spot = document.createElement('span');
-      spot.className = 'spot';
-      spot.setAttribute('aria-hidden', 'true');
-      card.appendChild(spot);
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(2) + '%');
-        card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(2) + '%');
-      });
-    });
+    /* Intentionally disabled. framer.com has no mouse-tracked --mx/--my
+       spotlight on cards, so per the measured recipe we ship none. */
   }
 
-  /* ---------------------------- magnetic hover -------------------------- */
+  /* ------------------------- magnetic hover -------------------------- */
   function initMagnetic() {
-    if (!finePointer) return;
-    Array.prototype.forEach.call(document.querySelectorAll('.btn-primary, .nav-cta'), function (btn) {
-      btn.addEventListener('pointermove', function (e) {
-        var r = btn.getBoundingClientRect();
-        var dx = (e.clientX - r.left - r.width / 2) * 0.3;
-        var dy = (e.clientY - r.top - r.height / 2) * 0.35;
-        btn.style.transition = 'transform 0.12s linear';
-        btn.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px)';
-      });
-      btn.addEventListener('pointerleave', function () {
-        btn.style.transition = 'transform 0.45s var(--ease-out)';
-        btn.style.transform = '';
-        var t = setTimeout(function () { btn.style.transition = ''; }, 460);
-        btn._mt = t;
-      });
-    });
+    /* Intentionally disabled. framer.com buttons do not move on hover, so
+       per the measured recipe (hover identical to resting) we ship none. */
   }
 
   /* ------------------------------- init -------------------------------- */

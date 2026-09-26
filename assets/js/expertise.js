@@ -20,8 +20,8 @@
   var MONO = "JetBrains Mono, monospace";
   var DISPLAY = "Inter Tight, 'Inter', sans-serif";
 
-  var CX = '#3B82F6', CY = '#60A5FA', CV = '#2563EB', CG = '#60A5FA', CA = '#93C5FD';
-  var CM = '#93A3BE', TEXT = '#E7EDF6', DARK = 'rgba(10, 15, 28, 0.55)';
+  var CX = '#0099FF', CY = '#00CCFF', CV = '#0055FF', CG = '#00CCFF', CA = '#00CCFF';
+  var CM = '#999999', TEXT = '#FFFFFF', DARK = 'rgba(0, 0, 0, 0.55)';
 
   /* ============================ CONFIG (edit me) ========================== */
   var CONFIG = {
@@ -215,11 +215,11 @@
   BUILD.dl = function (s) {
     var g = s.g, cfg = CONFIG.dl;
     defsGrad(g, 'dlg' + s.i, CX, CY);
-    svg('line', { x1: 20, y1: 44, x2: 380, y2: 44, stroke: 'rgba(148,163,184,0.16)', 'stroke-width': 1 }, g);
+    svg('line', { x1: 20, y1: 44, x2: 380, y2: 44, stroke: 'rgba(255,255,255,0.16)', 'stroke-width': 1 }, g);
     s.toks = [];
     cfg.tokens.forEach(function (tok, i) {
       var x = 22 + i * 60;
-      var pill = svg('path', { d: rr(x, 14, 56, 22, 11), fill: 'rgba(255,255,255,0.04)', stroke: 'rgba(148,163,184,0.2)', 'stroke-width': 1 }, g);
+      var pill = svg('path', { d: rr(x, 14, 56, 22, 11), fill: 'rgba(255,255,255,0.04)', stroke: 'rgba(255,255,255,0.2)', 'stroke-width': 1 }, g);
       var tx = T(x + 28, 28.5, tok, { size: 8, family: DISPLAY, anchor: 'middle', fill: TEXT }, g);
       s.toks.push({ x: x, pill: pill, tx: tx });
     });
@@ -262,12 +262,12 @@
     s.nodes = [];
     cfg.nodes.forEach(function (lab, i) {
       var x = 12 + i * 76;
-      var pill = svg('path', { d: rr(x, 46, 64, 24, 12), fill: 'rgba(255,255,255,0.04)', stroke: 'rgba(148,163,184,0.22)', 'stroke-width': 1 }, g);
+      var pill = svg('path', { d: rr(x, 46, 64, 24, 12), fill: 'rgba(255,255,255,0.04)', stroke: 'rgba(255,255,255,0.22)', 'stroke-width': 1 }, g);
       T(x + 32, 61.5, lab, { size: 8, anchor: 'middle' }, g);
       s.nodes.push({ cx: x + 32 });
     });
     for (var i = 0; i < cfg.nodes.length - 1; i++) {
-      svg('line', { x1: s.nodes[i].cx + 32, y1: 58, x2: s.nodes[i + 1].cx - 32, y2: 58, stroke: 'rgba(148,163,184,0.28)', 'stroke-width': 1.5 }, g);
+      svg('line', { x1: s.nodes[i].cx + 32, y1: 58, x2: s.nodes[i + 1].cx - 32, y2: 58, stroke: 'rgba(255,255,255,0.28)', 'stroke-width': 1.5 }, g);
     }
     s.packs = [];
     for (var j = 0; j < cfg.packets; j++) {
@@ -278,7 +278,7 @@
     s.sparkPts = [];
     for (var k = 0; k < cfg.sparkPts; k++) s.sparkPts.push(3 + Math.sin(k));
     s.spark = svg('polyline', { fill: 'none', stroke: CG, 'stroke-width': 1.5, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, g);
-    s.status = { pill: svg('path', { d: rr(306, 8, 82, 18, 9), fill: 'rgba(52,211,153,0.10)', stroke: 'rgba(52,211,153,0.45)', 'stroke-width': 1 }, g), txt: T(347, 20, '', { anchor: 'middle', size: 8 }, g) };
+    s.status = { pill: svg('path', { d: rr(306, 8, 82, 18, 9), fill: 'rgba(76,217,99,0.10)', stroke: 'rgba(76,217,99,0.45)', 'stroke-width': 1 }, g), txt: T(347, 20, '', { anchor: 'middle', size: 8 }, g) };
     s.total = cfg.quietMs + cfg.spikeMs + cfg.retrainMs + cfg.tailMs;
   };
 
@@ -321,8 +321,8 @@
     var col = green ? CG : CA;
     s.status.txt.textContent = stat;
     s.status.txt.setAttribute('fill', col);
-    s.status.pill.setAttribute('fill', green ? 'rgba(52,211,153,0.10)' : 'rgba(251,191,36,0.10)');
-    s.status.pill.setAttribute('stroke', green ? 'rgba(52,211,153,0.45)' : 'rgba(251,191,36,0.5)');
+    s.status.pill.setAttribute('fill', green ? 'rgba(76,217,99,0.10)' : 'rgba(255,187,0,0.10)');
+    s.status.pill.setAttribute('stroke', green ? 'rgba(76,217,99,0.45)' : 'rgba(255,187,0,0.5)');
   };
 
   /* ---- 4. Business Intelligence: self-drawing dashboard ------------------ */
@@ -332,13 +332,13 @@
     s.kpis = [];
     cfg.kpis.forEach(function (kpi, i) {
       var x = 16 + i * 194;
-      svg('path', { d: rr(x, 12, 174, 44, 10), fill: 'rgba(255,255,255,0.03)', stroke: 'rgba(148,163,184,0.18)', 'stroke-width': 1 }, g);
+      svg('path', { d: rr(x, 12, 174, 44, 10), fill: 'rgba(255,255,255,0.03)', stroke: 'rgba(255,255,255,0.18)', 'stroke-width': 1 }, g);
       T(x + 12, 26, kpi.label, {}, g);
       s.kpis.push(T(x + 12, 46, '', { size: 15, family: DISPLAY, weight: 800, fill: TEXT }, g));
       s.kpis[i].k = kpi;
     });
     for (var gr = 0; gr < 3; gr++) {
-      svg('line', { x1: 24, y1: 66 + gr * 16, x2: 244, y2: 66 + gr * 16, stroke: 'rgba(148,163,184,0.08)', 'stroke-width': 1 }, g);
+      svg('line', { x1: 24, y1: 66 + gr * 16, x2: 244, y2: 66 + gr * 16, stroke: 'rgba(255,255,255,0.08)', 'stroke-width': 1 }, g);
     }
     s.line = svg('path', { fill: 'none', stroke: 'url(#big' + s.i + ')', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
     var d = '', n = cfg.line.length;
@@ -382,7 +382,7 @@
   BUILD.bigdata = function (s) {
     var g = s.g, cfg = CONFIG.bigdata;
     defsGrad(g, 'beg' + s.i, CX, CV);
-    svg('path', { d: rr(16, 68, 272, 32, 8), fill: 'rgba(59,130,246,0.06)', stroke: 'rgba(148,163,184,0.2)', 'stroke-width': 1 }, g);
+    svg('path', { d: rr(16, 68, 272, 32, 8), fill: 'rgba(0,153,255,0.06)', stroke: 'rgba(255,255,255,0.2)', 'stroke-width': 1 }, g);
     T(20, 62, 'topic.events', {}, g);
     s.evs = [];
     for (var i = 0; i < cfg.particles; i++) {
@@ -396,9 +396,9 @@
     s.evDots = s.evs.map(function (e) {
       return svg('circle', { r: 2.2, fill: e.c, opacity: 0.9 }, g);
     });
-    svg('line', { x1: 290, y1: 76, x2: 300, y2: 76, stroke: 'rgba(148,163,184,0.4)', 'stroke-width': 1.5 }, g);
-    svg('path', { d: 'M300,71 L307,76 L300,81 Z', fill: 'rgba(148,163,184,0.4)' }, g);
-    s.spark = svg('path', { d: rr(298, 40, 86, 64, 12), fill: 'rgba(59,130,246,0.12)', stroke: 'rgba(59,130,246,0.5)', 'stroke-width': 1.2 }, g);
+    svg('line', { x1: 290, y1: 76, x2: 300, y2: 76, stroke: 'rgba(255,255,255,0.4)', 'stroke-width': 1.5 }, g);
+    svg('path', { d: 'M300,71 L307,76 L300,81 Z', fill: 'rgba(255,255,255,0.4)' }, g);
+    s.spark = svg('path', { d: rr(298, 40, 86, 64, 12), fill: 'rgba(0,153,255,0.12)', stroke: 'rgba(0,153,255,0.5)', 'stroke-width': 1.2 }, g);
     T(341, 66, 'SPARK', { size: 10, anchor: 'middle', family: DISPLAY, weight: 800, fill: TEXT }, g);
     T(341, 80, 'cluster', { size: 6, anchor: 'middle' }, g);
     s.eps = T(384, 26, '', { anchor: 'end', size: 10, family: DISPLAY, weight: 800, fill: TEXT }, g);
@@ -416,7 +416,7 @@
     }
     var v = cfg.epsBase + cfg.epsJit * Math.sin(s.t / 700 + 1);
     s.eps.textContent = v.toFixed(2) + 'M';
-    s.spark.setAttribute('stroke', Math.sin(s.t / 400) > 0.3 ? 'rgba(96,165,250,0.8)' : 'rgba(59,130,246,0.5)');
+    s.spark.setAttribute('stroke', Math.sin(s.t / 400) > 0.3 ? 'rgba(0,204,255,0.8)' : 'rgba(0,153,255,0.5)');
   };
 
   /* ---- 6. A/B Testing: table + narrowing CI + WINNER --------------------- */
@@ -438,15 +438,15 @@
     ['views', 'conv', 'rate', 'lift'].forEach(function (f, i) {
       s.rowB.push(T(colsX[i + 1], 62, cfg.rows.B[f], { size: 8 }, g));
     });
-    s.winnerBg = svg('path', { d: rr(100, 50, 300, 20, 8), fill: 'rgba(52,211,153,0.08)', opacity: 0 }, g);
-    svg('path', { d: rr(120, 84, 260, 6, 3), fill: 'rgba(148,163,184,0.18)' }, g);
+    s.winnerBg = svg('path', { d: rr(100, 50, 300, 20, 8), fill: 'rgba(76,217,99,0.08)', opacity: 0 }, g);
+    svg('path', { d: rr(120, 84, 260, 6, 3), fill: 'rgba(255,255,255,0.18)' }, g);
     s.ci = svg('rect', { x: 120, y: 86, width: 0, height: 2, rx: 1, fill: CY }, g);
-    svg('line', { x1: 120, y1: 80, x2: 120, y2: 94, stroke: 'rgba(148,163,184,0.5)', 'stroke-width': 1 }, g);
-    svg('line', { x1: 380, y1: 80, x2: 380, y2: 94, stroke: 'rgba(148,163,184,0.5)', 'stroke-width': 1 }, g);
+    svg('line', { x1: 120, y1: 80, x2: 120, y2: 94, stroke: 'rgba(255,255,255,0.5)', 'stroke-width': 1 }, g);
+    svg('line', { x1: 380, y1: 80, x2: 380, y2: 94, stroke: 'rgba(255,255,255,0.5)', 'stroke-width': 1 }, g);
     s.pTxt = T(332, 112, '', { size: 8 }, g);
     s.pLab = T(16, 112, 'confidence interval', { size: 6.5 }, g);
     var wb = svg('g', {}, g);
-    s.win = { g: wb, pill: svg('path', { d: rr(-46, -12, 92, 24, 12), fill: 'url(#abg' + s.i + ')' }, wb), txt: T(0, 4.5, 'WINNER', { size: 9, anchor: 'middle', family: DISPLAY, weight: 800, fill: '#05070F' }, wb) };
+    s.win = { g: wb, pill: svg('path', { d: rr(-46, -12, 92, 24, 12), fill: 'url(#abg' + s.i + ')' }, wb), txt: T(0, 4.5, 'WINNER', { size: 9, anchor: 'middle', family: DISPLAY, weight: 800, fill: '#000000' }, wb) };
     s.win.g.setAttribute('transform', 'translate(352,52) scale(0)');
     s.total = cfg.runMs + cfg.holdMs + 700;
   };

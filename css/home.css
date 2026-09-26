@@ -32,8 +32,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(0, 153, 255, 0.1);
+  border: 1px solid rgba(0, 153, 255, 0.3);
   color: var(--secondary);
   padding: 8px 18px;
   border-radius: 50px;
@@ -123,11 +123,11 @@
   position: relative;
   width: min(420px, 100%);
   background:
-    linear-gradient(rgba(10, 15, 28, 0.72), rgba(10, 15, 28, 0.78)) padding-box,
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.78)) padding-box,
     var(--gradient-border) border-box;
   border: 1px solid transparent;
   border-radius: 14px;
-  box-shadow: 0 24px 64px rgba(4, 8, 20, 0.6), 0 0 48px rgba(59, 130, 246, 0.12);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 48px rgba(0, 153, 255, 0.12);
   overflow: hidden;
   min-height: 322px;
 }
@@ -278,8 +278,8 @@
 .stats-panel .stat-card:hover { transform: translateY(-6px); }
 .stat-icon {
   width: 52px; height: 52px;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.18);
+  background: rgba(0, 153, 255, 0.1);
+  border: 1px solid rgba(0, 153, 255, 0.18);
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -375,9 +375,9 @@
   transform: translateY(-8px);
   border-color: var(--primary);
   box-shadow:
-    0 0 0 1px rgba(59, 130, 246, 0.35),
+    0 0 0 1px rgba(0, 153, 255, 0.35),
     0 24px 48px rgba(0, 0, 0, 0.45),
-    0 8px 24px rgba(59, 130, 246, 0.2);
+    0 8px 24px rgba(0, 153, 255, 0.2);
 }
 .expertise-card > * { position: relative; z-index: 1; }
 .bento-title {
@@ -410,9 +410,9 @@
   margin-top: 4px;
 }
 .expertise-tags span {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(0, 153, 255, 0.1);
   color: var(--primary);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(0, 153, 255, 0.2);
   padding: 4px 12px;
   border-radius: 50px;
   font-size: 12px;
@@ -518,7 +518,7 @@
   gap: 8px;
 }
 .project-tech span {
-  background: rgba(59,130,246,0.1);
+  background: rgba(0,153,255,0.1);
   color: var(--text-muted);
   border: 1px solid var(--border);
   padding: 4px 10px;
@@ -561,7 +561,7 @@
   font-family: Georgia, serif;
   line-height: 1;
 }
-.testimonial-stars { color: #FFD700; font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+.testimonial-stars { color: #FFBB00; font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
 .testimonial-text {
   color: var(--text);
   font-size: 16px;
@@ -629,7 +629,7 @@
 .cta-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0d1230 0%, #0a1740 45%, #05070F 100%);
+  background: linear-gradient(135deg, #111111 0%, #080808 45%, #000000 100%);
 }
 .cta-section .section-container { padding: 100px 24px; }
 .cta-content {

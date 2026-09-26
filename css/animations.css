@@ -63,11 +63,11 @@
   top: 0; left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, #6C63FF, #00D4AA, #FF6B6B);
+  background: linear-gradient(90deg, #0099FF, #4CD963, #FF0066);
   z-index: 9998;
   transition: width 0.1s linear;
   border-radius: 0 2px 2px 0;
-  box-shadow: 0 0 8px rgba(108, 99, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 153, 255, 0.6);
 }
 
 /* ---- SPOTLIGHT CURSOR ---- */
@@ -78,7 +78,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(108,99,255,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,153,255,0.06) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   transition: transform 0.15s ease;
 }
@@ -230,13 +230,13 @@
 }
 .data-chip {
   position: absolute;
-  background: rgba(108,99,255,0.08);
-  border: 1px solid rgba(108,99,255,0.2);
+  background: rgba(0,153,255,0.08);
+  border: 1px solid rgba(0,153,255,0.2);
   border-radius: 50px;
   padding: 6px 14px;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(108,99,255,0.5);
+  color: rgba(0,153,255,0.5);
   white-space: nowrap;
   animation: floatChip linear infinite;
   font-family: var(--font-display);
@@ -252,18 +252,18 @@
 .stat-card:hover .stat-icon {
   background: var(--gradient);
   color: white;
-  box-shadow: 0 0 30px rgba(108,99,255,0.5);
+  box-shadow: 0 0 30px rgba(0,153,255,0.5);
   animation: pulse-glow 1s ease infinite alternate;
 }
 @keyframes pulse-glow {
-  from { box-shadow: 0 0 15px rgba(108,99,255,0.4); }
-  to   { box-shadow: 0 0 40px rgba(108,99,255,0.8); }
+  from { box-shadow: 0 0 15px rgba(0,153,255,0.4); }
+  to   { box-shadow: 0 0 40px rgba(0,153,255,0.8); }
 }
 
 /* ---- NEON BORDER PULSE ---- */
 @keyframes neon-border {
-  0%,100% { box-shadow: 0 0 5px rgba(108,99,255,0.3), 0 0 20px rgba(108,99,255,0.1); }
-  50%      { box-shadow: 0 0 20px rgba(108,99,255,0.7), 0 0 60px rgba(108,99,255,0.3); }
+  0%,100% { box-shadow: 0 0 5px rgba(0,153,255,0.3), 0 0 20px rgba(0,153,255,0.1); }
+  50%      { box-shadow: 0 0 20px rgba(0,153,255,0.7), 0 0 60px rgba(0,153,255,0.3); }
 }
 .hero-badge { animation: neon-border 3s ease-in-out infinite, fadeSlideDown 1s ease forwards; }
 

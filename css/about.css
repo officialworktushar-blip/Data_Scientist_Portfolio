@@ -195,7 +195,7 @@
   border-radius: 50%;
   margin: 0 auto;
   border: 3px solid var(--dark);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.5);
   position: relative;
   z-index: 2;
   margin-top: 20px;
@@ -211,7 +211,7 @@
 .timeline-content:hover { border-color: var(--primary); transform: scale(1.02); }
 .timeline-year {
   display: inline-block;
-  background: rgba(59, 130, 246, 0.15);
+  background: rgba(0, 153, 255, 0.15);
   color: var(--primary);
   padding: 4px 12px;
   border-radius: 4px;
@@ -275,9 +275,9 @@
   margin-bottom: 12px;
 }
 .cert-year {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(0, 153, 255, 0.1);
   color: var(--primary);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(0, 153, 255, 0.3);
   padding: 4px 12px;
   border-radius: 50px;
   font-size: 12px;

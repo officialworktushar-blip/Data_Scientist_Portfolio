@@ -2,21 +2,21 @@
    GLOBAL STYLES - Data Scientist Portfolio
    ================================================ */
 :root {
-  --primary: #7376F3;
-  --primary-dark: #5C5FE8;
-  --secondary: #22D3EE;
-  --accent: #A78BFA;
-  --dark: #05070F;
-  --dark-2: #0A0F1C;
-  --dark-3: #0F1526;
-  --dark-4: #16203A;
+  --primary: #0099FF;
+  --primary-dark: #0055FF;
+  --secondary: #00CCFF;
+  --accent: #9900FF;
+  --dark: #000000;
+  --dark-2: #111111;
+  --dark-3: #171717;
+  --dark-4: #212121;
   --card-bg: rgba(255, 255, 255, 0.04);
-  --text: #E7EDF6;
-  --text-muted: #93A3BE;
-  --border: rgba(148, 163, 184, 0.16);
-  --gradient: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
-  --gradient-2: linear-gradient(135deg, #22D3EE 0%, #6366F1 100%);
-  --shadow: 0 24px 64px rgba(4, 8, 20, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.02);
+  --text: #FFFFFF;
+  --text-muted: #999999;
+  --border: rgba(255, 255, 255, 0.16);
+  --gradient: linear-gradient(135deg, #0099FF 0%, #00CCFF 100%);
+  --gradient-2: linear-gradient(135deg, #00CCFF 0%, #0099FF 100%);
+  --shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.02);
   --radius: 16px;
   --radius-lg: 24px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -130,11 +130,11 @@ body {
   transition: all var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(9, 13, 26, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   padding: 12px 0;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 .nav-container {
   max-width: 1300px;
@@ -187,7 +187,7 @@ body {
 }
 .nav-link:hover, .nav-link.active {
   color: var(--text);
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(0, 153, 255, 0.1);
 }
 .nav-link.active { color: var(--primary); }
 
@@ -217,7 +217,7 @@ body {
   opacity: 0;
   transition: opacity var(--transition);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(59,130,246,0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,153,255,0.4); }
 .btn-primary:hover::before { opacity: 1; }
 .btn-outline {
   display: inline-flex;
@@ -237,7 +237,7 @@ body {
 .btn-outline:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background: rgba(59,130,246,0.08);
+  background: rgba(0,153,255,0.08);
   transform: translateY(-2px);
 }
 .btn-lg { padding: 16px 32px; font-size: 16px; border-radius: 12px; }
@@ -271,7 +271,7 @@ body {
 }
 .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
-.nav-cta { font-size: 14px !important; padding: 10px 20px !important; border-radius: 8px !important; }
+.nav-cta { font-size: 14px !important; padding: 10px 14px !important; border-radius: 8px !important; }
 
 /* ---- Hamburger ---- */
 .hamburger {
@@ -308,9 +308,9 @@ body {
 }
 .section-badge {
   display: inline-block;
-  background: rgba(59, 130, 246, 0.15);
+  background: rgba(0, 153, 255, 0.15);
   color: var(--primary);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(0, 153, 255, 0.3);
   padding: 6px 18px;
   border-radius: 50px;
   font-size: 13px;
@@ -442,7 +442,7 @@ body {
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(10,10,26,0.98);
+    background: rgba(0,0,0,0.98);
     backdrop-filter: blur(20px);
     align-items: center;
     justify-content: center;

@@ -6,7 +6,7 @@
    ========================================================================== */
 
 :root {
-  --gradient-border: linear-gradient(135deg, rgba(59, 130, 246, 0.55), rgba(96, 165, 250, 0.25) 60%, rgba(59, 130, 246, 0.1));
+  --gradient-border: linear-gradient(135deg, rgba(0, 153, 255, 0.55), rgba(0, 204, 255, 0.25) 60%, rgba(0, 153, 255, 0.1));
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -35,7 +35,7 @@ main > section:not(.hero):not(.page-hero), footer {
   transform: scaleX(0);
   transform-origin: 0 50%;
   pointer-events: none;
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.55);
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.55);
 }
 
 /* ----------------------- Reveal system [data-reveal] -------------------- */
@@ -62,7 +62,7 @@ main > section:not(.hero):not(.page-hero), footer {
   position: absolute;
   inset: -2px;
   z-index: 3;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.92), rgba(96, 165, 250, 0.55));
+  background: linear-gradient(135deg, rgba(0, 153, 255, 0.92), rgba(0, 204, 255, 0.55));
   transform: scaleY(1);
   transform-origin: 50% 100%;
   transition: transform 0.85s var(--ease-out);
@@ -148,20 +148,6 @@ main > section:not(.hero):not(.page-hero), footer {
   margin-left: 1.6rem;
 }
 
-/* ------------------------- Cursor spotlight ----------------------------- */
-.js .spot {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 50%), rgba(59, 130, 246, 0.16), transparent 62%);
-}
-.js .has-spot:hover .spot { opacity: 1; }
-@media (hover: none), (pointer: coarse) { .js .spot { display: none; } }
-
 /* ------------------------- Magnetic buttons (JS-driven) ----------------- */
 @media (hover: hover) and (pointer: fine) {
   .js .btn-primary, .js .nav-cta {
@@ -176,10 +162,8 @@ main > section:not(.hero):not(.page-hero), footer {
 .pub-card, .tech-card, .case-study-card, .timeline-content,
 .contact-form-wrap, .details-group, .statistic, .skill-item, .kit-card,
 .radar-chart-container {
-  background:
-    linear-gradient(var(--glass-fill, rgba(255, 255, 255, 0.03)), var(--glass-fill, rgba(255, 255, 255, 0.03))) padding-box,
-    var(--gradient-border) border-box;
-  border: 1px solid transparent;
+  background: var(--glass-fill);
+  border: 1px solid var(--border-subtle);
 }
 
 /* Session-stats (marquee ticks) */
@@ -207,7 +191,6 @@ main > section:not(.hero):not(.page-hero), footer {
 /* ------------------ Reduced motion: everything instant ------------------ */
 @media (prefers-reduced-motion: reduce) {
   #motion-progress { display: none; }
-  .js .spot { display: none; }
   .marquee-track { animation: none !important; }
   .marquee, .marquee-track { -webkit-mask-image: none; mask-image: none; }
   .js [data-reveal], .js [data-reveal="up"], .js [data-reveal="fade"], .js [data-reveal="scale"], .js [data-reveal="mask"] {

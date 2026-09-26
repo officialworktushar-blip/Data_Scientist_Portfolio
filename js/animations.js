@@ -444,9 +444,9 @@
     setInterval(() => {
       cols = Math.floor(canvas.width / fontSize);
       if (drops.length !== cols) drops = Array(cols).fill(1);
-      ctx.fillStyle = 'rgba(10,10,26,0.05)';
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#6C63FF';
+      ctx.fillStyle = '#0099FF';
       ctx.font = fontSize + 'px monospace';
       drops.forEach((y, x) => {
         const char = chars[Math.floor(Math.random() * chars.length)];
@@ -470,7 +470,7 @@
               bar.style.width = pct + '%';
               // Glow effect on bar complete
               setTimeout(() => {
-                bar.style.boxShadow = '0 0 15px rgba(108,99,255,0.7)';
+                bar.style.boxShadow = '0 0 15px rgba(0,153,255,0.7)';
                 setTimeout(() => { bar.style.boxShadow = ''; }, 800);
               }, 1500);
             }, 300);
